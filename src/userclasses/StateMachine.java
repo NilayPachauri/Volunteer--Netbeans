@@ -108,6 +108,7 @@ public class StateMachine extends StateMachineBase{
         }
         
         System.out.println(listOfAgencies.get(0).getName());
+        System.out.println("FUCK THIS SHIT IT WORKED!");
         
         
     }
