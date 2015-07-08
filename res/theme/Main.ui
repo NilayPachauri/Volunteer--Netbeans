@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="Main" cloudDestinationProperty="Main" layout="BorderLayout" borderLayoutAbsoluteCenter="false" title="VOLUNTEER-CONNECT" >
+  <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BorderLayout" borderLayoutAbsoluteCenter="true" >
+    <layoutConstraint value="Center" />
+    <component type="Container" name="Container4" cloudDestinationProperty="Container4" focusable="false" layout="FlowLayout" flowLayoutFillRows="false" flowLayoutAlign="1" flowLayoutValign="0" >
+      <layoutConstraint value="North" />
+      <component type="Container" name="Information" cloudDestinationProperty="Container1" layout="TableLayout" tableLayoutRows="6" tableLayoutColumns="2" >
+        <component type="Label" name="City Label" cloudDestinationProperty="Label" text="City" >
+        </component>
+        <component type="ComboBox" name="City List" cloudDestinationProperty="ComboBox" uiid="Citycombo" >
+          <stringItem value="Union City" />
+          <stringItem value="Fremont" />
+          <stringItem value="Milpitas" />
+          <stringItem value="San Jose" />
+          <stringItem value="Cupertino" />
+          <stringItem value="Los Gatos" />
+          <stringItem value="Sunnyvale" />
+          <stringItem value="Mountain View" />
+          <stringItem value="Palo Alto" />
+          <stringItem value="Los Altos" />
+          <stringItem value="Redwood City" />
+          <stringItem value="San Francisco" />
+        </component>
+        <component type="Label" name="Area Of Interest Label" cloudDestinationProperty="Label1" text="Area of Interest " >
+        </component>
+        <component type="ComboBox" name="Area Of Interest List" cloudDestinationProperty="ComboBox1" uiid="Areacombo" >
+          <stringItem value="Children" />
+          <stringItem value="Elderly" />
+          <stringItem value="Disabled" />
+          <stringItem value="Poor" />
+          <stringItem value="Environment" />
+        </component>
+        <component type="Label" name="Number Of Hours Label" cloudDestinationProperty="Label2" text="# of Hours" >
+        </component>
+        <component type="ComboBox" name="Number Of Hours List" cloudDestinationProperty="ComboBox" >
+          <stringItem value="1" />
+          <stringItem value="2" />
+          <stringItem value="3" />
+          <stringItem value="4" />
+          <stringItem value="5" />
+          <stringItem value="6" />
+          <stringItem value="7" />
+          <stringItem value="8" />
+          <stringItem value="9" />
+        </component>
+      </component>
+      <component type="Container" name="Days" cloudDestinationProperty="Container5" snapToGrid="false" flatten="false" layout="FlowLayout" flowLayoutFillRows="false" flowLayoutAlign="1" flowLayoutValign="0" >
+        <component type="CheckBox" name="Monday" cloudDestinationProperty="CheckBox" text="Monday" >
+        </component>
+        <component type="CheckBox" name="Tuesday" cloudDestinationProperty="CheckBox1" text="Tuesday" >
+        </component>
+        <component type="CheckBox" name="Wednesday" cloudDestinationProperty="CheckBox2" text="Wednesday" >
+        </component>
+        <component type="CheckBox" name="Thursday" cloudDestinationProperty="CheckBox3" snapToGrid="false" flatten="false" text="Thursday" selected="false" verticalAlignment="2" textPosition="1" >
+        </component>
+        <component type="CheckBox" name="Friday" cloudDestinationProperty="CheckBox4" text="Friday" >
+        </component>
+        <component type="CheckBox" name="Saturday" cloudDestinationProperty="CheckBox5" text="Saturday" >
+        </component>
+        <component type="CheckBox" name="Sunday" cloudDestinationProperty="CheckBox6" text="Sunday" >
+        </component>
+        <component type="SpanButton" name="Enter" cloudDestinationProperty="SpanButton" >
+          <custom name="text" type="java.lang.String" value="ENTER" />
+        </component>
+      </component>
+    </component>
+  </component>
+</component>
