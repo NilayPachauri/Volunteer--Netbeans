@@ -107,8 +107,6 @@ public class StateMachine extends StateMachineBase{
    
         }
         
-        System.out.println(listOfAgencies.get(0).getName());
-        //Harshayu I took this line out
-        
+        System.out.println(listOfAgencies.get(0).getName());   
     }
 }
