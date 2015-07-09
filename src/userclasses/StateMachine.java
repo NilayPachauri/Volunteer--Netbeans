@@ -5,6 +5,7 @@
 package userclasses;
 
 import com.codename1.io.CSVParser;
+import com.codename1.ui.ComboBox;
 import com.codename1.ui.Command;
 import com.codename1.ui.Component;
 import com.codename1.ui.Display;
@@ -109,12 +110,16 @@ public class StateMachine extends StateMachineBase{
         }
         
         System.out.println(listOfAgencies.get(0).getName());
-<<<<<<< Updated upstream
-        //Harshayu I took this line out
-=======
-       
->>>>>>> Stashed changes
+
         
     }
 
+
+    @Override
+    protected void onMain_EnterAction(Component c, ActionEvent event) {
+      ComboBox hourSel= (ComboBox) findByName("NumberOfHoursList", c);
+      String hourSelect= (String) hourSel.getSelectedItem();
+      System.out.println(hourSelect);
+    
+    }
 }

@@ -144,18 +144,6 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.ComboBox findNumberOfHoursList(Component root) {
-        return (com.codename1.ui.ComboBox)findByName("Number Of Hours List", root);
-    }
-
-    public com.codename1.ui.ComboBox findNumberOfHoursList() {
-        com.codename1.ui.ComboBox cmp = (com.codename1.ui.ComboBox)findByName("Number Of Hours List", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.ComboBox)findByName("Number Of Hours List", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
     public com.codename1.ui.CheckBox findMonday(Component root) {
         return (com.codename1.ui.CheckBox)findByName("Monday", root);
     }
@@ -260,6 +248,18 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.ui.Container)findByName("Container", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.ComboBox findNumberOfHoursList(Component root) {
+        return (com.codename1.ui.ComboBox)findByName("NumberOfHoursList", root);
+    }
+
+    public com.codename1.ui.ComboBox findNumberOfHoursList() {
+        com.codename1.ui.ComboBox cmp = (com.codename1.ui.ComboBox)findByName("NumberOfHoursList", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.ComboBox)findByName("NumberOfHoursList", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -579,20 +579,16 @@ public abstract class StateMachineBase extends UIBuilder {
 
     protected boolean setListModel(List cmp) {
         String listName = cmp.getName();
-        if("Number Of Hours List".equals(listName)) {
-            return initListModelNumberOfHoursList(cmp);
-        }
         if("City List".equals(listName)) {
             return initListModelCityList(cmp);
         }
         if("Area Of Interest List".equals(listName)) {
             return initListModelAreaOfInterestList(cmp);
         }
+        if("NumberOfHoursList".equals(listName)) {
+            return initListModelNumberOfHoursList(cmp);
+        }
         return super.setListModel(cmp);
-    }
-
-    protected boolean initListModelNumberOfHoursList(List cmp) {
-        return false;
     }
 
     protected boolean initListModelCityList(List cmp) {
@@ -600,6 +596,10 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
     protected boolean initListModelAreaOfInterestList(List cmp) {
+        return false;
+    }
+
+    protected boolean initListModelNumberOfHoursList(List cmp) {
         return false;
     }
 
@@ -627,7 +627,7 @@ public abstract class StateMachineBase extends UIBuilder {
                 onMain_AreaOfInterestListAction(c, event);
                 return;
             }
-            if("Number Of Hours List".equals(c.getName())) {
+            if("NumberOfHoursList".equals(c.getName())) {
                 onMain_NumberOfHoursListAction(c, event);
                 return;
             }
