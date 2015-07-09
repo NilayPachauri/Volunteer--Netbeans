@@ -110,7 +110,18 @@ public class StateMachine extends StateMachineBase{
             
             
         }
+<<<<<<< Updated upstream
 
+=======
+        
+        System.out.println(listOfAgencies.get(0).getIsOpenMonday());    //statement to check if this is accessible
+   
+        System.out.println(listOfAgencies.get(0).getName());   
+        System.out.println(listOfAgencies.get(0).getName());
+
+        
+
+>>>>>>> Stashed changes
     }
 
 
