@@ -5,6 +5,7 @@
 package userclasses;
 
 import com.codename1.io.CSVParser;
+import com.codename1.ui.CheckBox;
 import com.codename1.ui.ComboBox;
 import com.codename1.ui.Command;
 import com.codename1.ui.Component;
@@ -110,28 +111,54 @@ public class StateMachine extends StateMachineBase{
             
         }
         
-<<<<<<< HEAD
-        
         System.out.println(listOfAgencies.get(0).getIsOpenMonday());    //statement to check if this is accessible
-   
-=======
-<<<<<<< HEAD
-        System.out.println(listOfAgencies.get(0).getName());   
-=======
-        System.out.println(listOfAgencies.get(0).getName());
-
-        
->>>>>>> origin/master
->>>>>>> origin/master
     }
 
 
     @Override
     protected void onMain_EnterAction(Component c, ActionEvent event) {
-      ComboBox hourSel= (ComboBox) findByName("NumberOfHoursList", c);
-      String hourSelect= (String) hourSel.getSelectedItem();
-      System.out.println(hourSelect);
-    
-      
+        ComboBox cityList = (ComboBox) findByName("City List",c);
+        String selectedCity = (String) cityList.getSelectedItem();
+        
+        ComboBox areaOfInterestList = (ComboBox) findByName("Area Of Interest List",c);
+        String selectedAreaOfInterest = (String) areaOfInterestList.getSelectedItem();
+        
+        ComboBox numberOfHoursList= (ComboBox) findByName("NumberOfHoursList",c);
+        String selectedHour = (String) numberOfHoursList.getSelectedItem();
+
+        CheckBox monday = (CheckBox) findByName("Monday",c);
+        boolean isSelectedMonday = monday.isSelected();
+        
+        CheckBox tuesday = (CheckBox) findByName("Tuesday",c);
+        boolean isSelectedTuesday = tuesday.isSelected();
+        
+        CheckBox wednesday = (CheckBox) findByName("Wednesday",c);
+        boolean isSelectedWednesday = wednesday.isSelected();
+        
+        CheckBox thursday = (CheckBox) findByName("Thursday",c);
+        boolean isSelectedThursday = thursday.isSelected();
+        
+        CheckBox friday = (CheckBox) findByName("Friday",c);
+        boolean isSelectedFriday = friday.isSelected();
+        
+        CheckBox saturday = (CheckBox) findByName("Saturday",c);
+        boolean isSelectedSaturday = saturday.isSelected();
+        
+        CheckBox sunday = (CheckBox) findByName("Sunday",c);
+        boolean isSelectedSunday = sunday.isSelected();
+        
+        //checking to see if these values are correct
+        
+        System.out.println(selectedCity);
+        System.out.println(selectedAreaOfInterest);
+        System.out.println(selectedHour);
+        System.out.println(isSelectedMonday);
+        System.out.println(isSelectedTuesday);
+        System.out.println(isSelectedWednesday);
+        System.out.println(isSelectedThursday);
+        System.out.println(isSelectedFriday);
+        System.out.println(isSelectedSaturday);
+        System.out.println(isSelectedSunday);
+        
     }
 }
