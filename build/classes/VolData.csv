@@ -1,1 +1,4 @@
-Agency Name,City,Area of Interest,Phone Number,E-mail,Number of Hours,isMonday,isTuesday,isWednesday,isThursday,isFriday,isSaturday,isSundayAfter School Athletics,Fremont,Children,408-892-9193,gjsorensen@sbcglobal.net,2,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE
+Agency Name,City,Area of Interest,Phone Number,E-mail,Number of Hours,isMonday,isTuesday,isWednesday,isThursday,isFriday,isSaturday,isSunday
+Buddies-4-Math,Mountain View,Children,000-000-0000,buddies4math@gmail.com,1,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Catholic Worker House,Redwood City,Children,650-366-8315,none@gmail.com,2,TRUE ,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE
+After School Athletics,Fremont,Children,408-892-9193,gjsorensen@sbcglobal.net,2,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE

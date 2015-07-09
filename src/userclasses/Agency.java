@@ -104,12 +104,15 @@ public class Agency {
     
     public int percentMatch(String userCity,String userTarget, double userHours, boolean userMonday, boolean userTuesday, boolean userWednesday, boolean userThursday, boolean userFriday, boolean userSaturday, boolean userSunday)   
     {
+        int cityWeightage = 40; //percent weightage
+        int hoursWeightage = 30;
+        int daysWeightage = 30;
          int percentMatch = 0;
          if(agencyTarget.equals(userTarget))
          {
              if(agencyCity.equals(userCity))
              {
-                 percentMatch = percentMatch + 40;
+                 percentMatch = percentMatch + cityWeightage;
              }
              
              int daysSelected = 0;
@@ -178,10 +181,10 @@ public class Agency {
              }
              
              if(daysSelected==0){daysSelected=1; daysMatched=1;}
-             percentMatch = (int) (percentMatch + (30*(daysMatched/daysSelected))); //percentMatch increases based on how many days matched out of days selected
+             percentMatch = (int) (percentMatch + (daysWeightage*(daysMatched/daysSelected))); //percentMatch increases based on how many days matched out of days selected
              
              double hoursDifference = Math.abs(userHours - agencyHours);
-             percentMatch = (int) (percentMatch + (30-(12*hoursDifference))); //should be +-<=2.5 hour difference or else the hour match isn't close enough
+             percentMatch = (int) (percentMatch + (hoursWeightage-(12*hoursDifference))); //should be +-<=2.5 hour difference or else the hour match isn't close enough
          }
         return percentMatch;
     }

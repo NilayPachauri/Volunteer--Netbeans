@@ -26,9 +26,8 @@ import java.util.ArrayList;
 public class StateMachine extends StateMachineBase{
     private static ArrayList<String> places =new ArrayList<String>();
     private static ArrayList<String> results =new ArrayList<String>();
-    
-    
     private static ArrayList <Agency> listOfAgencies = new ArrayList <Agency>();
+     private static ArrayList <Agency> sortedListOfAgencies = new ArrayList <Agency>();
     
     public StateMachine(String resFile) {
         super(resFile);
@@ -58,6 +57,38 @@ public class StateMachine extends StateMachineBase{
         
         return data; 
         
+    }
+    
+    public static void sortAgencies(String selectedCity, String selectedAreaOfInterest, double selectedHour, boolean isSelectedMonday, boolean isSelectedTuesday, boolean isSelectedWednesday, boolean isSelectedThursday, boolean isSelectedFriday, boolean isSelectedSaturday, boolean isSelectedSunday)
+    {
+        int minMatch = 40;
+        for(int i=0; i<listOfAgencies.size(); i++)
+        {
+            if(listOfAgencies.get(i).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday)>minMatch) //CHANGE HOW MUCH U WANT MINIMUM PERCENT MATCH TO BE!
+            {
+                if(sortedListOfAgencies.size()==0)
+                {
+                    sortedListOfAgencies.add(listOfAgencies.get(i));
+                }
+                else if(listOfAgencies.get(i).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday) <= sortedListOfAgencies.get(sortedListOfAgencies.size()-1).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday))
+                {
+                    sortedListOfAgencies.add(listOfAgencies.get(i));
+                    
+                }
+                else
+                {
+                    for(int w=0; w<sortedListOfAgencies.size(); w++)
+                    {
+                        if(listOfAgencies.get(i).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday) > sortedListOfAgencies.get(w).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday))
+                        {
+                            sortedListOfAgencies.add(w, listOfAgencies.get(i));
+                            w=w+100;
+                            
+                        }
+                    }
+                }
+            }
+        }
     }
     
     /**
@@ -106,9 +137,7 @@ public class StateMachine extends StateMachineBase{
             saturday = Boolean.parseBoolean(data[rows][11]);
             sunday = Boolean.parseBoolean(data[rows][12]);
             
-            listOfAgencies.add(new Agency(name,city,target,phoneNumber,email,hours,monday,tuesday,wednesday,thursday,friday,saturday,sunday));
-            
-            
+            listOfAgencies.add(new Agency(name,city,target,phoneNumber,email,hours,monday,tuesday,wednesday,thursday,friday,saturday,sunday)); 
         }
 
     }
@@ -146,9 +175,7 @@ public class StateMachine extends StateMachineBase{
         
         CheckBox sunday = (CheckBox) findByName("Sunday",c);
         boolean isSelectedSunday = sunday.isSelected();
-        
-        System.out.println(listOfAgencies.get(0).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday));
-        
+                
 //        //checking to see if these values are correct
 //        
 //        System.out.println(selectedCity);
@@ -161,6 +188,14 @@ public class StateMachine extends StateMachineBase{
 //        System.out.println(isSelectedFriday);
 //        System.out.println(isSelectedSaturday);
 //        System.out.println(isSelectedSunday);
-        
+        sortAgencies(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday);
+        System.out.println(sortedListOfAgencies.size());
+        for(int x=0; x<sortedListOfAgencies.size(); x++)
+        {
+            System.out.println(sortedListOfAgencies.get(x).getName());
+            System.out.println(sortedListOfAgencies.get(x).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday));
+            //System.out.println(listOfAgencies.get(x).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday));
+
+        }
     }
 }
