@@ -122,16 +122,7 @@ public class Agency {
                      daysMatched++;
                  }                
              }
-             
-             if(userMonday==true)
-             {
-                 daysSelected++;
-                 if(isOpenMonday==true)
-                 {
-                     daysMatched++;
-                 }                
-             }
-             
+            
              if(userTuesday==true)
              {
                  daysSelected++;
@@ -186,6 +177,7 @@ public class Agency {
                  }                
              }
              
+             if(daysSelected==0){daysSelected=1; daysMatched=1;}
              percentMatch = (int) (percentMatch + (daysMatched/daysSelected)); //percentMatch increases based on how many days matched out of days selected
              
              double hoursDifference = Math.abs(userHours - agencyHours);
