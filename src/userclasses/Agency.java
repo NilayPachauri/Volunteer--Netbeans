@@ -178,11 +178,10 @@ public class Agency {
              }
              
              if(daysSelected==0){daysSelected=1; daysMatched=1;}
-             percentMatch = (int) (percentMatch + (daysMatched/daysSelected)); //percentMatch increases based on how many days matched out of days selected
+             percentMatch = (int) (percentMatch + (30*(daysMatched/daysSelected))); //percentMatch increases based on how many days matched out of days selected
              
              double hoursDifference = Math.abs(userHours - agencyHours);
-             percentMatch = (int) (percentMatch + (30-(12*(hoursDifference)))); //should be +-<=2.5 hour difference or else the hour match isn't close enough
-             
+             percentMatch = (int) (percentMatch + (30-(12*hoursDifference))); //should be +-<=2.5 hour difference or else the hour match isn't close enough
          }
         return percentMatch;
     }
