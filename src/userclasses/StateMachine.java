@@ -109,20 +109,7 @@ public class StateMachine extends StateMachineBase{
             
             
         }
-        
-<<<<<<< HEAD
-        
-        System.out.println(listOfAgencies.get(0).getIsOpenMonday());    //statement to check if this is accessible
-   
-=======
-<<<<<<< HEAD
-        System.out.println(listOfAgencies.get(0).getName());   
-=======
         System.out.println(listOfAgencies.get(0).getName());
-
-        
->>>>>>> origin/master
->>>>>>> origin/master
     }
 
 
@@ -133,5 +120,8 @@ public class StateMachine extends StateMachineBase{
       System.out.println(hourSelect);
     
       
+        System.out.println(listOfAgencies.get(0).getName());
+        //Harshayu I took this line out
+        
     }
 }
