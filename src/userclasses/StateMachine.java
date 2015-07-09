@@ -78,13 +78,13 @@ public class StateMachine extends StateMachineBase{
                 
         double hours;
                 
-        String monday;
-        String tuesday;
-        String wednesday;
-        String thursday;
-        String friday;
-        String saturday;
-        String sunday;
+        boolean monday;
+        boolean tuesday;
+        boolean wednesday;
+        boolean thursday;
+        boolean friday;
+        boolean saturday;
+        boolean sunday;
         
         Agency x= null;
         for (int rows = 1; rows < data.length; rows++)    {
@@ -97,21 +97,22 @@ public class StateMachine extends StateMachineBase{
             
             hours = Double.parseDouble(data[rows][5]);
             
-            monday = data[rows][6];
-            tuesday = data[rows][7];
-            wednesday = data[rows][8];
-            thursday = data[rows][9];
-            friday = data[rows][10];
-            saturday = data[rows][11];
-            sunday = data[rows][12];
+            monday = Boolean.parseBoolean(data[rows][6]);
+            tuesday = Boolean.parseBoolean(data[rows][7]);
+            wednesday = Boolean.parseBoolean(data[rows][8]);
+            thursday = Boolean.parseBoolean(data[rows][9]);
+            friday = Boolean.parseBoolean(data[rows][10]);
+            saturday = Boolean.parseBoolean(data[rows][11]);
+            sunday = Boolean.parseBoolean(data[rows][12]);
             
             listOfAgencies.add(new Agency(name,city,target,phoneNumber,email,hours,monday,tuesday,wednesday,thursday,friday,saturday,sunday));
-   
+            
+            
         }
         
-        System.out.println(listOfAgencies.get(0).getName());
-
         
+        System.out.println(listOfAgencies.get(0).getIsOpenMonday());    //statement to check if this is accessible
+   
     }
 
 
@@ -121,5 +122,6 @@ public class StateMachine extends StateMachineBase{
       String hourSelect= (String) hourSel.getSelectedItem();
       System.out.println(hourSelect);
     
+      
     }
 }

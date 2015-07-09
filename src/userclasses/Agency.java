@@ -20,15 +20,15 @@ public class Agency {
     private double agencyHours;    //hours which the agency works per day
 
     //what days the agency is open
-    private String isOpenMonday;
-    private String isOpenTuesday;
-    private String isOpenWednesday;
-    private String isOpenThursday;
-    private String isOpenFriday;
-    private String isOpenSaturday;
-    private String isOpenSunday;
+    private boolean isOpenMonday;
+    private boolean isOpenTuesday;
+    private boolean isOpenWednesday;
+    private boolean isOpenThursday;
+    private boolean isOpenFriday;
+    private boolean isOpenSaturday;
+    private boolean isOpenSunday;
 
-    public Agency(String name, String city, String target, String phoneNumber, String email, double hours, String monday, String tuesday, String wednesday, String thursday, String friday, String saturday, String sunday) {
+    public Agency(String name, String city, String target, String phoneNumber, String email, double hours, boolean monday, boolean tuesday, boolean wednesday, boolean thursday, boolean friday, boolean saturday, boolean sunday) {
         agencyName = name;
         agencyCity = city;
         agencyTarget = target;
@@ -76,31 +76,31 @@ public class Agency {
         return agencyHours;
     }
     
-    public String getIsOpenMonday() {
+    public boolean getIsOpenMonday() {
         return isOpenMonday;
     }
     
-    public String getIsOpenTuesday() {
+    public boolean getIsOpenTuesday() {
         return isOpenTuesday;
     }
     
-    public String getIsOpenWednesday() {
+    public boolean getIsOpenWednesday() {
         return isOpenWednesday;
     }
     
-    public String getIsOpenThursday() {
+    public boolean getIsOpenThursday() {
         return isOpenThursday;
     }
     
-    public String getIsOpenFriday() {
+    public boolean getIsOpenFriday() {
         return isOpenFriday;
     }
     
-    public String getIsOpenSaturday() {
+    public boolean getIsOpenSaturday() {
         return isOpenSaturday;
     }
     
-    public String getIsOpenSunday() {
+    public boolean getIsOpenSunday() {
         return isOpenSunday;
     }
 }
