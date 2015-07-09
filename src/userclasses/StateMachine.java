@@ -110,13 +110,13 @@ public class StateMachine extends StateMachineBase{
             
             
         }
-        
-        System.out.println(listOfAgencies.get(0).getIsOpenMonday());    //statement to check if this is accessible
+
     }
 
 
     @Override
     protected void onMain_EnterAction(Component c, ActionEvent event) {
+
         ComboBox cityList = (ComboBox) findByName("City List",c);
         String selectedCity = (String) cityList.getSelectedItem();
         
@@ -124,7 +124,7 @@ public class StateMachine extends StateMachineBase{
         String selectedAreaOfInterest = (String) areaOfInterestList.getSelectedItem();
         
         ComboBox numberOfHoursList= (ComboBox) findByName("NumberOfHoursList",c);
-        String selectedHour = (String) numberOfHoursList.getSelectedItem();
+        double selectedHour = Double.parseDouble((String) numberOfHoursList.getSelectedItem());
 
         CheckBox monday = (CheckBox) findByName("Monday",c);
         boolean isSelectedMonday = monday.isSelected();
@@ -147,18 +147,20 @@ public class StateMachine extends StateMachineBase{
         CheckBox sunday = (CheckBox) findByName("Sunday",c);
         boolean isSelectedSunday = sunday.isSelected();
         
-        //checking to see if these values are correct
+        System.out.println(listOfAgencies.get(0).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday));
         
-        System.out.println(selectedCity);
-        System.out.println(selectedAreaOfInterest);
-        System.out.println(selectedHour);
-        System.out.println(isSelectedMonday);
-        System.out.println(isSelectedTuesday);
-        System.out.println(isSelectedWednesday);
-        System.out.println(isSelectedThursday);
-        System.out.println(isSelectedFriday);
-        System.out.println(isSelectedSaturday);
-        System.out.println(isSelectedSunday);
+//        //checking to see if these values are correct
+//        
+//        System.out.println(selectedCity);
+//        System.out.println(selectedAreaOfInterest);
+//        System.out.println(selectedHour);
+//        System.out.println(isSelectedMonday);
+//        System.out.println(isSelectedTuesday);
+//        System.out.println(isSelectedWednesday);
+//        System.out.println(isSelectedThursday);
+//        System.out.println(isSelectedFriday);
+//        System.out.println(isSelectedSaturday);
+//        System.out.println(isSelectedSunday);
         
     }
 }
