@@ -133,7 +133,6 @@
         <val key="@checkBoxUncheckedFocusImage" value="chbox1.png" />
         <val key="@checkBoxUncheckedImage" value="chbox1.png" />
         <val key="@comboImage" value="ComboBox.borderBottom_1.png" />
-        <val key="@commandBehavior" value="Side" />
         <val key="@dialogTransitionIn" value="fade" />
         <val key="@dialogTransitionOut" value="fade" />
         <val key="@dlgButtonCommandUIID" value="DialogButton" />
