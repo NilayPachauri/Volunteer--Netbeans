@@ -5,6 +5,8 @@
 package userclasses;
 
 import com.codename1.io.CSVParser;
+import com.codename1.ui.ComboBox;
+import com.codename1.ui.Command;
 import com.codename1.ui.Component;
 import com.codename1.ui.Display;
 import com.codename1.ui.Form;
@@ -107,6 +109,21 @@ public class StateMachine extends StateMachineBase{
    
         }
         
+<<<<<<< HEAD
         System.out.println(listOfAgencies.get(0).getName());   
+=======
+        System.out.println(listOfAgencies.get(0).getName());
+
+        
+>>>>>>> origin/master
+    }
+
+
+    @Override
+    protected void onMain_EnterAction(Component c, ActionEvent event) {
+      ComboBox hourSel= (ComboBox) findByName("NumberOfHoursList", c);
+      String hourSelect= (String) hourSel.getSelectedItem();
+      System.out.println(hourSelect);
+    
     }
 }

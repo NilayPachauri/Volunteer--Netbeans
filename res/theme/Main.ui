@@ -33,7 +33,7 @@
         </component>
         <component type="Label" name="Number Of Hours Label" cloudDestinationProperty="Label2" text="# of Hours" >
         </component>
-        <component type="ComboBox" name="Number Of Hours List" cloudDestinationProperty="ComboBox" >
+        <component type="ComboBox" name="NumberOfHoursList" cloudDestinationProperty="ComboBox" >
           <stringItem value="1" />
           <stringItem value="2" />
           <stringItem value="3" />
