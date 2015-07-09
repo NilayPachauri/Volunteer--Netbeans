@@ -139,7 +139,18 @@ public class StateMachine extends StateMachineBase{
             
             listOfAgencies.add(new Agency(name,city,target,phoneNumber,email,hours,monday,tuesday,wednesday,thursday,friday,saturday,sunday)); 
         }
+<<<<<<< Updated upstream
 
+=======
+        
+        System.out.println(listOfAgencies.get(0).getIsOpenMonday());    //statement to check if this is accessible
+   
+        System.out.println(listOfAgencies.get(0).getName());   
+        System.out.println(listOfAgencies.get(0).getName());
+
+        
+
+>>>>>>> Stashed changes
     }
 
 
