@@ -102,23 +102,23 @@ public class Agency {
         return isOpenSunday;
     }
     
-    public int percentMatch(String userCity,String userTarget, double userHours, boolean userMonday, boolean userTuesday, boolean userWednesday, boolean userThursday, boolean userFriday, boolean userSaturday, boolean userSunday)   
+    public int percentMatch(UserInput userPicks)   
     {
         final int CITY_WEIGHTAGE = 40; //percent weightage
         final int HOURS_WEIGHTAGE = 30;
         final int DAYS_WEIGHTAGE = 30;
         
          int percentMatch = 0;
-         if(agencyTarget.equals(userTarget))
+         if(agencyTarget.equals(userPicks.getUserAreaOfInterest()))
          {
-             if(agencyCity.equals(userCity))
+             if(agencyCity.equals(userPicks.getUserCity()))
              {
                  percentMatch = percentMatch + CITY_WEIGHTAGE;
              }
              
              int daysSelected = 0;
              int daysMatched = 0;
-             if(userMonday==true)
+             if(userPicks.getUserIsSelectedMonday())
              {
                  daysSelected++;
                  if(isOpenMonday==true)
@@ -127,7 +127,7 @@ public class Agency {
                  }                
              }
             
-             if(userTuesday==true)
+             if(userPicks.getUserIsSelectedTuesday())
              {
                  daysSelected++;
                  if(isOpenTuesday==true)
@@ -136,7 +136,7 @@ public class Agency {
                  }               
              }
              
-             if(userWednesday==true)
+             if(userPicks.getUserIsSelectedWednesday())
              {
                  daysSelected++;
                  if(isOpenWednesday==true)
@@ -145,7 +145,7 @@ public class Agency {
                  }                 
              }
              
-             if(userThursday==true)
+             if(userPicks.getUserIsSelectedThursday())
              {
                  daysSelected++;
                  if(isOpenThursday==true)
@@ -154,7 +154,7 @@ public class Agency {
                  }                
              }
              
-             if(userFriday==true)
+             if(userPicks.getUserIsSelectedFriday())
              {
                  daysSelected++;
                  if(isOpenFriday==true)
@@ -163,7 +163,7 @@ public class Agency {
                  }
              }
              
-             if(userSaturday==true)
+             if(userPicks.getUserIsSelectedSaturday())
              {
                  daysSelected++;
                  if(isOpenSaturday==true)
@@ -172,7 +172,7 @@ public class Agency {
                  }  
              }
              
-             if(userSunday==true)
+             if(userPicks.getUserIsSelectedSunday())
              {
                  daysSelected++;
                  if(isOpenSunday==true)
@@ -184,7 +184,7 @@ public class Agency {
              if(daysSelected==0){daysSelected=1; daysMatched=1;}
              percentMatch = (int) (percentMatch + (DAYS_WEIGHTAGE*(daysMatched/daysSelected))); //percentMatch increases based on how many days matched out of days selected
              
-             double hoursDifference = Math.abs(userHours - agencyHours);
+             double hoursDifference = Math.abs(userPicks.getUserNumberOfHours() - agencyHours);
              percentMatch = (int) (percentMatch + (HOURS_WEIGHTAGE-(12*hoursDifference))); //should be +-<=2.5 hour difference or else the hour match isn't close enough
          }
         return percentMatch;

@@ -7,16 +7,16 @@ package userclasses;
 import com.codename1.io.CSVParser;
 import com.codename1.ui.CheckBox;
 import com.codename1.ui.ComboBox;
-import com.codename1.ui.Command;
 import com.codename1.ui.Component;
 import com.codename1.ui.Display;
 import com.codename1.ui.Form;
 import com.codename1.ui.events.ActionEvent;
+import com.codename1.ui.spinner.NumericSpinner;
 import generated.StateMachineBase;
 import com.codename1.ui.util.Resources;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
+import java.util.Vector;
 
 
 /**
@@ -24,10 +24,8 @@ import java.util.ArrayList;
  * @author Your name here
  */
 public class StateMachine extends StateMachineBase{
-    private static ArrayList<String> places =new ArrayList<String>();
-    private static ArrayList<String> results =new ArrayList<String>();
-    private static ArrayList <Agency> listOfAgencies = new ArrayList <Agency>();
-     private static ArrayList <Agency> sortedListOfAgencies = new ArrayList <Agency>();
+    private static Vector <Agency> listOfAgencies = new Vector <Agency>();
+     private static Vector <Agency> sortedListOfAgencies = new Vector <Agency>();
     
     public StateMachine(String resFile) {
         super(resFile);
@@ -59,37 +57,36 @@ public class StateMachine extends StateMachineBase{
         
     }
     
-    public static void sortAgencies(String selectedCity, String selectedAreaOfInterest, double selectedHour, boolean isSelectedMonday, boolean isSelectedTuesday, boolean isSelectedWednesday, boolean isSelectedThursday, boolean isSelectedFriday, boolean isSelectedSaturday, boolean isSelectedSunday)
-    {
-        final int MINIMUMMATCH = 40;
+    public static void addAgencies(UserInput userSelections)    {
+        final int MINIMUM_MATCH = 40;
+        
         for(int i=0; i<listOfAgencies.size(); i++)
         {
-            if(listOfAgencies.get(i).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday)>MINIMUMMATCH) //CHANGE HOW MUCH U WANT MINIMUM PERCENT MATCH TO BE!
-            {
-                if(sortedListOfAgencies.size()==0)
-                {
-                    sortedListOfAgencies.add(listOfAgencies.get(i));
-                }
-                else if(listOfAgencies.get(i).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday) <= sortedListOfAgencies.get(sortedListOfAgencies.size()-1).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday))
-                {
-                    sortedListOfAgencies.add(listOfAgencies.get(i));
-                    
-                }
-                else
-                {
-                    for(int w=0; w<sortedListOfAgencies.size(); w++)
-                    {
-                        if(listOfAgencies.get(i).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday) > sortedListOfAgencies.get(w).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday))
-                        {
-                            sortedListOfAgencies.add(w, listOfAgencies.get(i));
-                            w=w+100;
-                            
-                        }
-                    }
-                }
+            if (listOfAgencies.get(i).percentMatch(userSelections) > MINIMUM_MATCH) {
+                sortedListOfAgencies.add(listOfAgencies.get(i));
             }
         }
     }
+    
+    public static void shellSortListOfAgencies(UserInput userPreferences) {
+	int increment = sortedListOfAgencies.size() / 2;
+	while (increment > 0) {
+		for (int i = increment; i < sortedListOfAgencies.size(); i++) {
+			int j = i;
+			Agency temp = sortedListOfAgencies.get(i);
+			while (j >= increment && sortedListOfAgencies.get(j - increment).percentMatch(userPreferences) > temp.percentMatch(userPreferences)) {
+				sortedListOfAgencies.set(j,sortedListOfAgencies.get(j - increment));
+				j = j - increment;
+			}
+			sortedListOfAgencies.set(j,temp);
+		}
+		if (increment == 2) {
+			increment = 1;
+		} else {
+			increment *= (5.0 / 11);
+		}
+	}
+}
     
     /**
      *
@@ -151,8 +148,9 @@ public class StateMachine extends StateMachineBase{
         ComboBox areaOfInterestList = (ComboBox) findByName("Area Of Interest List",c);
         String selectedAreaOfInterest = (String) areaOfInterestList.getSelectedItem();
         
-        ComboBox numberOfHoursList= (ComboBox) findByName("NumberOfHoursList",c);
-        double selectedHour = Double.parseDouble((String) numberOfHoursList.getSelectedItem());
+//        NumericSpinner numberOfHoursSpinner = (NumericSpinner) findByName("Number Of Hours Spinner",c);
+//        double selectedHour = numberOfHoursSpinner.getValue();
+        double selectedHour = 2;    //just until we get the Numeric Spinner to work
 
         CheckBox monday = (CheckBox) findByName("Monday",c);
         boolean isSelectedMonday = monday.isSelected();
@@ -174,6 +172,10 @@ public class StateMachine extends StateMachineBase{
         
         CheckBox sunday = (CheckBox) findByName("Sunday",c);
         boolean isSelectedSunday = sunday.isSelected();
+        
+        System.out.println(findByName("Number Of Hours Spinner",c).getPropertyTypes());
+        
+        UserInput userChoices = new UserInput(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday);
                 
 //        //checking to see if these values are correct
 //        
@@ -187,14 +189,11 @@ public class StateMachine extends StateMachineBase{
 //        System.out.println(isSelectedFriday);
 //        System.out.println(isSelectedSaturday);
 //        System.out.println(isSelectedSunday);
-        sortAgencies(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday);
-        System.out.println(sortedListOfAgencies.size());
-        for(int x=0; x<sortedListOfAgencies.size(); x++)
-        {
-            System.out.println(sortedListOfAgencies.get(x).getName());
-            System.out.println(sortedListOfAgencies.get(x).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday));
-            //System.out.println(listOfAgencies.get(x).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday));
-
+        addAgencies(userChoices);
+        shellSortListOfAgencies(userChoices);
+        
+        for (int i = 0; i < sortedListOfAgencies.size(); i++)   {
+            System.out.println(sortedListOfAgencies.get(i).percentMatch(userChoices));
         }
     }
 }
