@@ -360,7 +360,12 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
+    public static final int COMMAND_MainBack = 2;
     public static final int COMMAND_HomePageStartSearching = 1;
+
+    protected boolean onMainBack() {
+        return false;
+    }
 
     protected boolean onHomePageStartSearching() {
         return false;
@@ -368,6 +373,13 @@ public abstract class StateMachineBase extends UIBuilder {
 
     protected void processCommand(ActionEvent ev, Command cmd) {
         switch(cmd.getId()) {
+            case COMMAND_MainBack:
+                if(onMainBack()) {
+                    ev.consume();
+                    return;
+                }
+                break;
+
             case COMMAND_HomePageStartSearching:
                 if(onHomePageStartSearching()) {
                     ev.consume();

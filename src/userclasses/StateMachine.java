@@ -61,10 +61,10 @@ public class StateMachine extends StateMachineBase{
     
     public static void sortAgencies(String selectedCity, String selectedAreaOfInterest, double selectedHour, boolean isSelectedMonday, boolean isSelectedTuesday, boolean isSelectedWednesday, boolean isSelectedThursday, boolean isSelectedFriday, boolean isSelectedSaturday, boolean isSelectedSunday)
     {
-        int minMatch = 40;
+        final int MINIMUMMATCH = 40;
         for(int i=0; i<listOfAgencies.size(); i++)
         {
-            if(listOfAgencies.get(i).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday)>minMatch) //CHANGE HOW MUCH U WANT MINIMUM PERCENT MATCH TO BE!
+            if(listOfAgencies.get(i).percentMatch(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday)>MINIMUMMATCH) //CHANGE HOW MUCH U WANT MINIMUM PERCENT MATCH TO BE!
             {
                 if(sortedListOfAgencies.size()==0)
                 {
@@ -139,18 +139,10 @@ public class StateMachine extends StateMachineBase{
             
             listOfAgencies.add(new Agency(name,city,target,phoneNumber,email,hours,monday,tuesday,wednesday,thursday,friday,saturday,sunday)); 
         }
-<<<<<<< Updated upstream
-
-=======
         
         System.out.println(listOfAgencies.get(0).getIsOpenMonday());    //statement to check if this is accessible
-   
         System.out.println(listOfAgencies.get(0).getName());   
         System.out.println(listOfAgencies.get(0).getName());
-
-        
-
->>>>>>> Stashed changes
     }
 
 

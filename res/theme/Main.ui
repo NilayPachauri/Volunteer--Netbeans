@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<component type="Form" name="Main" cloudDestinationProperty="Main" layout="BorderLayout" borderLayoutAbsoluteCenter="false" title="VOLUNTEER-CONNECT" >
+<component type="Form" name="Main" cloudDestinationProperty="Main" rtl="false" layout="BorderLayout" borderLayoutAbsoluteCenter="false" title="VOLUNTEER-CONNECT" >
   <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BorderLayout" borderLayoutAbsoluteCenter="true" >
     <layoutConstraint value="Center" />
     <component type="Container" name="Container4" cloudDestinationProperty="Container4" focusable="false" layout="FlowLayout" flowLayoutFillRows="false" flowLayoutAlign="1" flowLayoutValign="0" >
@@ -66,4 +66,4 @@
       </component>
     </component>
   </component>
-</component>
+<command name="Back" icon="cal_left_arrow.png" id="2" action="$Back" backCommand="false" /></component>
