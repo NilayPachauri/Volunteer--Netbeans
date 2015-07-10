@@ -3,14 +3,50 @@
 <resource majorVersion="1" minorVersion="6" useXmlUI="false">
     <image name="border.png"  />
     <image name="Button.borderBottom_1.png" type="multi"  />
+    <image name="Button.borderBottom_2.png" type="multi"  />
+    <image name="Button.borderBottom_3.png" type="multi"  />
+    <image name="Button.borderBottom_4.png" type="multi"  />
     <image name="Button.borderBottomL_1.png" type="multi"  />
+    <image name="Button.borderBottomL_2.png" type="multi"  />
+    <image name="Button.borderBottomL_3.png" type="multi"  />
+    <image name="Button.borderBottomL_4.png" type="multi"  />
     <image name="Button.borderBottomR_1.png" type="multi"  />
+    <image name="Button.borderBottomR_2.png" type="multi"  />
+    <image name="Button.borderBottomR_3.png" type="multi"  />
+    <image name="Button.borderBottomR_4.png" type="multi"  />
     <image name="Button.borderCenter_1.png" type="multi"  />
+    <image name="Button.borderCenter_2.png" type="multi"  />
+    <image name="Button.borderCenter_3.png" type="multi"  />
+    <image name="Button.borderCenter_4.png" type="multi"  />
     <image name="Button.borderLeft_1.png" type="multi"  />
+    <image name="Button.borderLeft_2.png" type="multi"  />
+    <image name="Button.borderLeft_3.png" type="multi"  />
+    <image name="Button.borderLeft_4.png" type="multi"  />
     <image name="Button.borderRight_1.png" type="multi"  />
+    <image name="Button.borderRight_2.png" type="multi"  />
+    <image name="Button.borderRight_3.png" type="multi"  />
+    <image name="Button.borderRight_4.png" type="multi"  />
     <image name="Button.borderTop_1.png" type="multi"  />
+    <image name="Button.borderTop_2.png" type="multi"  />
+    <image name="Button.borderTop_3.png" type="multi"  />
+    <image name="Button.borderTop_4.png" type="multi"  />
     <image name="Button.borderTopL_1.png" type="multi"  />
+    <image name="Button.borderTopL_2.png" type="multi"  />
+    <image name="Button.borderTopL_3.png" type="multi"  />
+    <image name="Button.borderTopL_4.png" type="multi"  />
     <image name="Button.borderTopR_1.png" type="multi"  />
+    <image name="Button.borderTopR_2.png" type="multi"  />
+    <image name="Button.borderTopR_3.png" type="multi"  />
+    <image name="Button.borderTopR_4.png" type="multi"  />
+    <image name="Button.sel#borderBottom_1.png" type="multi"  />
+    <image name="Button.sel#borderBottomL_1.png" type="multi"  />
+    <image name="Button.sel#borderBottomR_1.png" type="multi"  />
+    <image name="Button.sel#borderCenter_1.png" type="multi"  />
+    <image name="Button.sel#borderLeft_1.png" type="multi"  />
+    <image name="Button.sel#borderRight_1.png" type="multi"  />
+    <image name="Button.sel#borderTop_1.png" type="multi"  />
+    <image name="Button.sel#borderTopL_1.png" type="multi"  />
+    <image name="Button.sel#borderTopR_1.png" type="multi"  />
     <image name="cal_left_arrow.png" type="multi"  />
     <image name="cal_right_arrow.png" type="multi"  />
     <image name="chbox1.png" type="multi"  />
@@ -42,6 +78,7 @@
     <image name="Dialog.borderTop_1.png" type="multi"  />
     <image name="Dialog.borderTopL_1.png" type="multi"  />
     <image name="Dialog.borderTopR_1.png" type="multi"  />
+    <legacyFont name="Font 1" />
     <ui name="Home Page" />
     <l10n name="Localization">
         <lang name="iw">
@@ -61,13 +98,13 @@
             <entry key="t2g.slowConnection" value=" &#x5d4;&#x5ea;&#x5e7;&#x5e9;&#x5d5;&#x5e8;&#x5ea; &#x5d0;&#x5d9;&#x5d8;&#x5d9;&#x5ea;, &#x5e2;&#x5d5;&#x5d3; &#x5e8;&#x5d2;&#x5e2; &#x5d1;&#x5d0;&#x5d5;&#x5d5;&#x5d9;&#x5e8;" />
             <entry key="t2g.checkinAbroadAnd" value="(&#x5d0;&#x5dd; &#x5d0;&#x5ea;&#x5d4; &#x5d1;&#x5d7;&#x5d5;&quot;&#x5dc; &#x5d5;&#x5d0;&#x5ea;&#x5d4; &#x5e2;&#x5d3;&#x5d9;&#x5d9;&#x5df; &#x5e8;&#x5d5;&#x5d0;&#x5d4; &#x5d4;&#x5d5;&#x5d3;&#x5e2;&#x5d4; &#x5d6;&#x5d5;, &#x5d5;&#x5d5;&#x5d3;&#x5d0; &#x5db;&#x5d9; &#x5d4;-GPS &#x5d3;&#x5dc;&#x5d5;&#x5e7;)" />
             <entry key="t2g.serverErr" value="&#x5d0;&#x5d5;&#x5e4;&#x5e1;...&#x5d9;&#x5e9; &#x5dc;&#x5e0;&#x5d5; &#x5d1;&#x5e2;&#x5d9;&#x5d4; &#x5d6;&#x5de;&#x5e0;&#x5d9;&#x5ea;, &#x5d0;&#x5e0;&#x5d0; &#x5e0;&#x5e1;&#x5d4; &#x5de;&#x5d0;&#x5d5;&#x5d7;&#x5e8; &#x5d9;&#x5d5;&#x5ea;&#x5e8;." />
-            <entry key="t2g.networkErr" value="&#x5d1;&#x5e2;&#x5d9;&#x5d9;&#x5ea; &#x5e8;&#x5e9;&#x5ea;, &#x5e0;&#x5e1;&#x5d4; &#x5e9;&#x5d5;&#x5d1; &#x5de;&#x5d0;&#x5d5;&#x5d7;&#x5e8; &#x5d9;&#x5d5;&#x5ea;&#x5e8;" />
-            <entry key="t2g.checkinAbroad" value="&#x5e0;&#x5d9;&#x5ea;&#x5df; &#x5dc;&#x5d1;&#x5e6;&#x5e2; &#x5e4;&#x5e2;&#x5d5;&#x5dc;&#x5d4; &#x5d6;&#x5d5; &#x5de;&#x5d7;&#x5d5;&quot;&#x5dc; &#x5d0;&#x5d5; &#x5de;&#x5e0;&#x5ea;&#x5d1;&quot;&#x5d2;" />
             <entry key="t2g.gameabroad" value="&#x5d4;&#x5e9;&#x5ea;&#x5ea;&#x5e4;&#x5d5;&#x5ea; &#x5d1;&#x5de;&#x5e9;&#x5d7;&#x5e7; Travelmaker &#x5ea;&#x5ea;&#x5d0;&#x5e4;&#x5e9;&#x5e8; &#x5e8;&#x5e7; &#x5d1;&#x5d7;&#x5d5;&quot;&#x5dc;, &#x5d0;&#x5dc; &#x5ea;&#x5e9;&#x5db;&#x5d7;&#x5d5; &#x5dc;&#x5d7;&#x5d6;&#x5d5;&#x5e8; &#x5d0;&#x5dc;&#x5d9;&#x5e0;&#x5d5; &#x5db;&#x5e9;&#x5ea;&#x5e0;&#x5d7;&#x5ea;&#x5d5; &#x5d1;&#x5d9;&#x5e2;&#x5d3;!" />
+            <entry key="t2g.checkinAbroad" value="&#x5e0;&#x5d9;&#x5ea;&#x5df; &#x5dc;&#x5d1;&#x5e6;&#x5e2; &#x5e4;&#x5e2;&#x5d5;&#x5dc;&#x5d4; &#x5d6;&#x5d5; &#x5de;&#x5d7;&#x5d5;&quot;&#x5dc; &#x5d0;&#x5d5; &#x5de;&#x5e0;&#x5ea;&#x5d1;&quot;&#x5d2;" />
+            <entry key="t2g.networkErr" value="&#x5d1;&#x5e2;&#x5d9;&#x5d9;&#x5ea; &#x5e8;&#x5e9;&#x5ea;, &#x5e0;&#x5e1;&#x5d4; &#x5e9;&#x5d5;&#x5d1; &#x5de;&#x5d0;&#x5d5;&#x5d7;&#x5e8; &#x5d9;&#x5d5;&#x5ea;&#x5e8;" />
             <entry key="ok" value="" />
             <entry key="t2g.gifts" value="&#x5ea;&#x5d4;&#x5e0;&#x5d4; &#x5de;&#x5de;&#x5d2;&#x5d5;&#x5d5;&#x5df; &#x5de;&#x5ea;&#x5e0;&#x5d5;&#x5ea; &#x5d5;&#x5d4;&#x5d8;&#x5d1;&#x5d5;&#x5ea;!" />
-            <entry key="edit" value="" />
             <entry key="select" value="" />
+            <entry key="edit" value="" />
             <entry key="t2g.slow3" value="&#x5e2;&#x5d5;&#x5d3; &#x5e8;&#x5d2;&#x5e2; &#x5d1;&#x5d0;&#x5d5;&#x5d5;&#x5d9;&#x5e8;!" />
             <entry key="t2g.slow2" value="&#x5d4;&#x5ea;&#x5e7;&#x5e9;&#x5d5;&#x5e8;&#x5ea; &#x5d0;&#x5d9;&#x5d8;&#x5d9;&#x5ea;..." />
             <entry key="t2g.slow1" value="&#x5d0;&#x5d5;&#x5e4;&#x5e1;..." />
@@ -92,13 +129,13 @@
             <entry key="t2g.slowConnection" value="Slow connection..." />
             <entry key="t2g.checkinAbroadAnd" value=" (if you are abroad and you still see this message, make sure your gps is turned on)" />
             <entry key="t2g.serverErr" value="We have a problem, please try later." />
-            <entry key="t2g.networkErr" value="Network error occured try later" />
-            <entry key="t2g.checkinAbroad" value="Check In is only allowed when you are abroad or from the air port" />
             <entry key="t2g.gameabroad" value="You can participate in the game only once you&#x2019;ve reached your destination. Don&#x2019;t forget to come back once you&#x2019;ve arrived!" />
+            <entry key="t2g.checkinAbroad" value="Check In is only allowed when you are abroad or from the air port" />
+            <entry key="t2g.networkErr" value="Network error occured try later" />
             <entry key="ok" value="OK" />
             <entry key="t2g.gifts" value="Win gifts!" />
-            <entry key="edit" value="Edit" />
             <entry key="select" value="Select" />
+            <entry key="edit" value="Edit" />
             <entry key="t2g.slow3" value="we'll be on air in a minute" />
             <entry key="t2g.slow2" value="seems like connection is slow" />
             <entry key="t2g.slow1" value="Oops," />
@@ -110,6 +147,15 @@
     <ui name="Main" />
     <image name="menu.png" type="multi"  />
     <image name="of_menu.png" type="multi"  />
+    <image name="sel#borderBottom_1.png" type="multi"  />
+    <image name="sel#borderBottomL_1.png" type="multi"  />
+    <image name="sel#borderBottomR_1.png" type="multi"  />
+    <image name="sel#borderCenter_1.png" type="multi"  />
+    <image name="sel#borderLeft_1.png" type="multi"  />
+    <image name="sel#borderRight_1.png" type="multi"  />
+    <image name="sel#borderTop_1.png" type="multi"  />
+    <image name="sel#borderTopL_1.png" type="multi"  />
+    <image name="sel#borderTopR_1.png" type="multi"  />
     <image name="sliderEmpty.png" type="multi"  />
     <image name="sliderEmptyLeft.png" type="multi"  />
     <image name="sliderEmptyRight.png" type="multi"  />
@@ -792,6 +838,51 @@
         <border key="sel#border" type="empty" />
         <val key="transparency" value="0" />
     </theme>
+    <image name="Title.borderBottom_1.png" type="multi"  />
+    <image name="Title.borderBottom_2.png" type="multi"  />
+    <image name="Title.borderBottom_3.png" type="multi"  />
+    <image name="Title.borderBottomL_1.png" type="multi"  />
+    <image name="Title.borderBottomL_2.png" type="multi"  />
+    <image name="Title.borderBottomL_3.png" type="multi"  />
+    <image name="Title.borderBottomR_1.png" type="multi"  />
+    <image name="Title.borderBottomR_2.png" type="multi"  />
+    <image name="Title.borderBottomR_3.png" type="multi"  />
+    <image name="Title.borderCenter_1.png" type="multi"  />
+    <image name="Title.borderCenter_2.png" type="multi"  />
+    <image name="Title.borderCenter_3.png" type="multi"  />
+    <image name="Title.borderLeft_1.png" type="multi"  />
+    <image name="Title.borderLeft_2.png" type="multi"  />
+    <image name="Title.borderLeft_3.png" type="multi"  />
+    <image name="Title.borderRight_1.png" type="multi"  />
+    <image name="Title.borderRight_2.png" type="multi"  />
+    <image name="Title.borderRight_3.png" type="multi"  />
+    <image name="Title.borderTop_1.png" type="multi"  />
+    <image name="Title.borderTop_2.png" type="multi"  />
+    <image name="Title.borderTop_3.png" type="multi"  />
+    <image name="Title.borderTopL_1.png" type="multi"  />
+    <image name="Title.borderTopL_2.png" type="multi"  />
+    <image name="Title.borderTopL_3.png" type="multi"  />
+    <image name="Title.borderTopR_1.png" type="multi"  />
+    <image name="Title.borderTopR_2.png" type="multi"  />
+    <image name="Title.borderTopR_3.png" type="multi"  />
+    <image name="Title.sel#borderBottom_1.png" type="multi"  />
+    <image name="Title.sel#borderBottom_2.png" type="multi"  />
+    <image name="Title.sel#borderBottomL_1.png" type="multi"  />
+    <image name="Title.sel#borderBottomL_2.png" type="multi"  />
+    <image name="Title.sel#borderBottomR_1.png" type="multi"  />
+    <image name="Title.sel#borderBottomR_2.png" type="multi"  />
+    <image name="Title.sel#borderCenter_1.png" type="multi"  />
+    <image name="Title.sel#borderCenter_2.png" type="multi"  />
+    <image name="Title.sel#borderLeft_1.png" type="multi"  />
+    <image name="Title.sel#borderLeft_2.png" type="multi"  />
+    <image name="Title.sel#borderRight_1.png" type="multi"  />
+    <image name="Title.sel#borderRight_2.png" type="multi"  />
+    <image name="Title.sel#borderTop_1.png" type="multi"  />
+    <image name="Title.sel#borderTop_2.png" type="multi"  />
+    <image name="Title.sel#borderTopL_1.png" type="multi"  />
+    <image name="Title.sel#borderTopL_2.png" type="multi"  />
+    <image name="Title.sel#borderTopR_1.png" type="multi"  />
+    <image name="Title.sel#borderTopR_2.png" type="multi"  />
     <image name="TitleArea.borderBottom_1.png" type="multi"  />
     <image name="TitleArea.borderBottomL_1.png" type="multi"  />
     <image name="TitleArea.borderBottomR_1.png" type="multi"  />
@@ -803,5 +894,15 @@
     <image name="TitleArea.borderTopR_1.png" type="multi"  />
     <theme name="VC 2">
         <val key="@includeNativeBool" value="true" />
+        <val key="Button.bgColor" value="ff0000" />
+        <border key="Button.border" type="image" i1="Button.borderTop_4.png" i2="Button.borderBottom_4.png" i3="Button.borderLeft_4.png" i4="Button.borderRight_4.png" i5="Button.borderTopL_4.png" i6="Button.borderTopR_4.png" i7="Button.borderBottomL_4.png" i8="Button.borderBottomR_4.png" i9="Button.borderCenter_4.png" />
+        <val key="Button.fgColor" value="ffffff" />
+        <val key="Button.padUnit" value="1,1,1,1" />
+        <val key="Button.padding" value="1,1,1,1" />
+        <val key="Button.transparency" value="255" />
+        <val key="Title.bgColor" value="ff0000" />
+        <border key="Title.border" type="rounded" thickness="0" arcW="1" arcH="1" color="0" />
+        <val key="Title.fgColor" value="ffffff" />
+        <val key="Title.transparency" value="255" />
     </theme>
 </resource>

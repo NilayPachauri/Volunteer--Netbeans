@@ -18,6 +18,7 @@ import com.codename1.ui.util.Resources;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Vector;
+import javafx.scene.control.Spinner;
 
 
 /**
@@ -204,5 +205,19 @@ public class StateMachine extends StateMachineBase{
             System.out.println(sortedListOfAgencies.get(i).percentMatch(userChoices));
             System.out.println(sortedListOfAgencies.get(i).getName());
         }
+    }
+
+    @Override
+    protected void beforeMain(Form f) {
+        Dimension size = new Dimension(200,50);
+        
+        GenericSpinner citySpinner = (GenericSpinner) findByName("CitySpinner",f);
+        citySpinner.setPreferredSize(size);
+         
+        GenericSpinner interestSpinner = (GenericSpinner) findByName("InterestSpinner",f);
+        interestSpinner.setPreferredSize(size);
+                
+        NumericSpinner hourSpinner= (NumericSpinner) findByName("HourSpinner",f);
+        hourSpinner.setPreferredSize(size);
     }
 }
