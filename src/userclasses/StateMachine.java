@@ -6,11 +6,12 @@ package userclasses;
 
 import com.codename1.io.CSVParser;
 import com.codename1.ui.CheckBox;
-import com.codename1.ui.ComboBox;
 import com.codename1.ui.Component;
 import com.codename1.ui.Display;
 import com.codename1.ui.Form;
 import com.codename1.ui.events.ActionEvent;
+import com.codename1.ui.geom.Dimension;
+import com.codename1.ui.spinner.GenericSpinner;
 import com.codename1.ui.spinner.NumericSpinner;
 import generated.StateMachineBase;
 import com.codename1.ui.util.Resources;
@@ -142,16 +143,20 @@ public class StateMachine extends StateMachineBase{
     @Override
     protected void onMain_EnterAction(Component c, ActionEvent event) {
 
-        ComboBox cityList = (ComboBox) findByName("City List",c);
-        String selectedCity = (String) cityList.getSelectedItem();
+        GenericSpinner citySpinner = (GenericSpinner) findByName("CitySpinner",c);
+        String selectedCity = (String) citySpinner.getValue();
         
-        ComboBox areaOfInterestList = (ComboBox) findByName("Area Of Interest List",c);
-        String selectedAreaOfInterest = (String) areaOfInterestList.getSelectedItem();
+        GenericSpinner interestSpinner = (GenericSpinner) findByName("InterestSpinner",c);
+        String selectedInterest = (String) interestSpinner.getValue();
         
-      NumericSpinner numberOfHoursSpinner = (NumericSpinner) findByName("HourSpinner", c);
-       double selectedHour = numberOfHoursSpinner.getValue();
-       System.out.println(selectedHour);
-        //double selectedHour = 2;    //just until we get the Numeric Spinner to work
+        NumericSpinner numberOfHoursSpinner = (NumericSpinner) findByName("HourSpinner", c);
+        double selectedHour = numberOfHoursSpinner.getValue();
+        
+        Dimension size = new Dimension(60,60);
+        
+        citySpinner.setSize(size);
+        interestSpinner.setSize(size);
+        numberOfHoursSpinner.setSize(size);
 
         CheckBox monday = (CheckBox) findByName("Monday",c);
         boolean isSelectedMonday = monday.isSelected();
@@ -176,7 +181,7 @@ public class StateMachine extends StateMachineBase{
         
         //System.out.println(findByName("Number Of Hours Spinner",c).getPropertyTypes());
         
-        UserInput userChoices = new UserInput(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday);
+        UserInput userChoices = new UserInput(selectedCity, selectedInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday);
                 
 //        //checking to see if these values are correct
 //        
