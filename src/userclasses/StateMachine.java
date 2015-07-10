@@ -149,9 +149,7 @@ public class StateMachine extends StateMachineBase{
         String selectedAreaOfInterest = (String) areaOfInterestList.getSelectedItem();
         
       NumericSpinner numberOfHoursSpinner = (NumericSpinner) findByName("HourSpinner", c);
-       double selectedHour = numberOfHoursSpinner.getValue();
-       System.out.println(selectedHour);
-        //double selectedHour = 2;    //just until we get the Numeric Spinner to work
+       double selectedHour = numberOfHoursSpinner.getValue();        
 
         CheckBox monday = (CheckBox) findByName("Monday",c);
         boolean isSelectedMonday = monday.isSelected();
@@ -174,12 +172,8 @@ public class StateMachine extends StateMachineBase{
         CheckBox sunday = (CheckBox) findByName("Sunday",c);
         boolean isSelectedSunday = sunday.isSelected();
         
-        //System.out.println(findByName("Number Of Hours Spinner",c).getPropertyTypes());
-<<<<<<< HEAD
-      
-=======
         
->>>>>>> origin/master
+
         UserInput userChoices = new UserInput(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday);
                 
 //        //checking to see if these values are correct
