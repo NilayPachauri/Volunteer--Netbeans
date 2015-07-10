@@ -74,7 +74,7 @@ public class StateMachine extends StateMachineBase{
 		for (int i = increment; i < sortedListOfAgencies.size(); i++) {
 			int j = i;
 			Agency temp = sortedListOfAgencies.get(i);
-			while (j >= increment && sortedListOfAgencies.get(j - increment).percentMatch(userPreferences) > temp.percentMatch(userPreferences)) {
+			while (j >= increment && sortedListOfAgencies.get(j - increment).percentMatch(userPreferences) < temp.percentMatch(userPreferences)) {
 				sortedListOfAgencies.set(j,sortedListOfAgencies.get(j - increment));
 				j = j - increment;
 			}
@@ -173,8 +173,8 @@ public class StateMachine extends StateMachineBase{
         CheckBox sunday = (CheckBox) findByName("Sunday",c);
         boolean isSelectedSunday = sunday.isSelected();
         
-        System.out.println(findByName("Number Of Hours Spinner",c).getPropertyTypes());
-        
+        //System.out.println(findByName("Number Of Hours Spinner",c).getPropertyTypes());
+      
         UserInput userChoices = new UserInput(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday);
                 
 //        //checking to see if these values are correct
@@ -184,6 +184,7 @@ public class StateMachine extends StateMachineBase{
 //        System.out.println(selectedHour);
 //        System.out.println(isSelectedMonday);
 //        System.out.println(isSelectedTuesday);
+        
 //        System.out.println(isSelectedWednesday);
 //        System.out.println(isSelectedThursday);
 //        System.out.println(isSelectedFriday);
@@ -194,6 +195,7 @@ public class StateMachine extends StateMachineBase{
         
         for (int i = 0; i < sortedListOfAgencies.size(); i++)   {
             System.out.println(sortedListOfAgencies.get(i).percentMatch(userChoices));
+            System.out.println(sortedListOfAgencies.get(i).getName());
         }
     }
 }
