@@ -148,9 +148,10 @@ public class StateMachine extends StateMachineBase{
         ComboBox areaOfInterestList = (ComboBox) findByName("Area Of Interest List",c);
         String selectedAreaOfInterest = (String) areaOfInterestList.getSelectedItem();
         
-//        NumericSpinner numberOfHoursSpinner = (NumericSpinner) findByName("Number Of Hours Spinner",c);
-//        double selectedHour = numberOfHoursSpinner.getValue();
-        double selectedHour = 2;    //just until we get the Numeric Spinner to work
+      NumericSpinner numberOfHoursSpinner = (NumericSpinner) findByName("HourSpinner", c);
+       double selectedHour = numberOfHoursSpinner.getValue();
+       System.out.println(selectedHour);
+        //double selectedHour = 2;    //just until we get the Numeric Spinner to work
 
         CheckBox monday = (CheckBox) findByName("Monday",c);
         boolean isSelectedMonday = monday.isSelected();
@@ -174,7 +175,11 @@ public class StateMachine extends StateMachineBase{
         boolean isSelectedSunday = sunday.isSelected();
         
         //System.out.println(findByName("Number Of Hours Spinner",c).getPropertyTypes());
+<<<<<<< HEAD
       
+=======
+        
+>>>>>>> origin/master
         UserInput userChoices = new UserInput(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday);
                 
 //        //checking to see if these values are correct

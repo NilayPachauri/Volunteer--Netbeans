@@ -37,11 +37,11 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("Container", com.codename1.ui.Container.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
         UIBuilder.registerCustomComponent("Button", com.codename1.ui.Button.class);
-        UIBuilder.registerCustomComponent("ComboBox", com.codename1.ui.ComboBox.class);
         UIBuilder.registerCustomComponent("CheckBox", com.codename1.ui.CheckBox.class);
         UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
         UIBuilder.registerCustomComponent("SpanButton", com.codename1.components.SpanButton.class);
         UIBuilder.registerCustomComponent("SpanLabel", com.codename1.components.SpanLabel.class);
+        UIBuilder.registerCustomComponent("GenericSpinner", com.codename1.ui.spinner.GenericSpinner.class);
         if(loadTheme) {
             if(res == null) {
                 try {
@@ -80,11 +80,11 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("Container", com.codename1.ui.Container.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
         UIBuilder.registerCustomComponent("Button", com.codename1.ui.Button.class);
-        UIBuilder.registerCustomComponent("ComboBox", com.codename1.ui.ComboBox.class);
         UIBuilder.registerCustomComponent("CheckBox", com.codename1.ui.CheckBox.class);
         UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
         UIBuilder.registerCustomComponent("SpanButton", com.codename1.components.SpanButton.class);
         UIBuilder.registerCustomComponent("SpanLabel", com.codename1.components.SpanLabel.class);
+        UIBuilder.registerCustomComponent("GenericSpinner", com.codename1.ui.spinner.GenericSpinner.class);
         if(loadTheme) {
             if(res == null) {
                 try {
@@ -170,6 +170,30 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
+    public com.codename1.ui.spinner.GenericSpinner findInterestSpinner(Component root) {
+        return (com.codename1.ui.spinner.GenericSpinner)findByName("InterestSpinner", root);
+    }
+
+    public com.codename1.ui.spinner.GenericSpinner findInterestSpinner() {
+        com.codename1.ui.spinner.GenericSpinner cmp = (com.codename1.ui.spinner.GenericSpinner)findByName("InterestSpinner", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.spinner.GenericSpinner)findByName("InterestSpinner", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.spinner.GenericSpinner findCitySpinner(Component root) {
+        return (com.codename1.ui.spinner.GenericSpinner)findByName("CitySpinner", root);
+    }
+
+    public com.codename1.ui.spinner.GenericSpinner findCitySpinner() {
+        com.codename1.ui.spinner.GenericSpinner cmp = (com.codename1.ui.spinner.GenericSpinner)findByName("CitySpinner", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.spinner.GenericSpinner)findByName("CitySpinner", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
     public com.codename1.ui.Container findContainer4(Component root) {
         return (com.codename1.ui.Container)findByName("Container4", root);
     }
@@ -190,18 +214,6 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.components.SpanLabel cmp = (com.codename1.components.SpanLabel)findByName("SpanLabel", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.components.SpanLabel)findByName("SpanLabel", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.ComboBox findCityList(Component root) {
-        return (com.codename1.ui.ComboBox)findByName("City List", root);
-    }
-
-    public com.codename1.ui.ComboBox findCityList() {
-        com.codename1.ui.ComboBox cmp = (com.codename1.ui.ComboBox)findByName("City List", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.ComboBox)findByName("City List", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -238,18 +250,6 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.ui.CheckBox cmp = (com.codename1.ui.CheckBox)findByName("Saturday", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.ui.CheckBox)findByName("Saturday", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.ComboBox findAreaOfInterestList(Component root) {
-        return (com.codename1.ui.ComboBox)findByName("Area Of Interest List", root);
-    }
-
-    public com.codename1.ui.ComboBox findAreaOfInterestList() {
-        com.codename1.ui.ComboBox cmp = (com.codename1.ui.ComboBox)findByName("Area Of Interest List", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.ComboBox)findByName("Area Of Interest List", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -591,25 +591,6 @@ public abstract class StateMachineBase extends UIBuilder {
     protected void setStateMain(Form f, Hashtable state) {
     }
 
-    protected boolean setListModel(List cmp) {
-        String listName = cmp.getName();
-        if("City List".equals(listName)) {
-            return initListModelCityList(cmp);
-        }
-        if("Area Of Interest List".equals(listName)) {
-            return initListModelAreaOfInterestList(cmp);
-        }
-        return super.setListModel(cmp);
-    }
-
-    protected boolean initListModelCityList(List cmp) {
-        return false;
-    }
-
-    protected boolean initListModelAreaOfInterestList(List cmp) {
-        return false;
-    }
-
     protected void handleComponentAction(Component c, ActionEvent event) {
         Container rootContainerAncestor = getRootAncestor(c);
         if(rootContainerAncestor == null) return;
@@ -626,14 +607,6 @@ public abstract class StateMachineBase extends UIBuilder {
             }
         }
         if(rootContainerName.equals("Main")) {
-            if("City List".equals(c.getName())) {
-                onMain_CityListAction(c, event);
-                return;
-            }
-            if("Area Of Interest List".equals(c.getName())) {
-                onMain_AreaOfInterestListAction(c, event);
-                return;
-            }
             if("Monday".equals(c.getName())) {
                 onMain_MondayAction(c, event);
                 return;
@@ -670,12 +643,6 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
       protected void onHomePage_ButtonAction(Component c, ActionEvent event) {
-      }
-
-      protected void onMain_CityListAction(Component c, ActionEvent event) {
-      }
-
-      protected void onMain_AreaOfInterestListAction(Component c, ActionEvent event) {
       }
 
       protected void onMain_MondayAction(Component c, ActionEvent event) {
