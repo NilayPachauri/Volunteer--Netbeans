@@ -33,6 +33,7 @@ public abstract class StateMachineBase extends UIBuilder {
 
     public Container startApp(Resources res, String resPath, boolean loadTheme) {
         initVars();
+        UIBuilder.registerCustomComponent("NumericSpinner", com.codename1.ui.spinner.NumericSpinner.class);
         UIBuilder.registerCustomComponent("Container", com.codename1.ui.Container.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
         UIBuilder.registerCustomComponent("Button", com.codename1.ui.Button.class);
@@ -75,6 +76,7 @@ public abstract class StateMachineBase extends UIBuilder {
 
     public Container createWidget(Resources res, String resPath, boolean loadTheme) {
         initVars();
+        UIBuilder.registerCustomComponent("NumericSpinner", com.codename1.ui.spinner.NumericSpinner.class);
         UIBuilder.registerCustomComponent("Container", com.codename1.ui.Container.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
         UIBuilder.registerCustomComponent("Button", com.codename1.ui.Button.class);
@@ -140,6 +142,18 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Number Of Hours Label", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.ui.Label)findByName("Number Of Hours Label", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.spinner.NumericSpinner findHourSpinner(Component root) {
+        return (com.codename1.ui.spinner.NumericSpinner)findByName("HourSpinner", root);
+    }
+
+    public com.codename1.ui.spinner.NumericSpinner findHourSpinner() {
+        com.codename1.ui.spinner.NumericSpinner cmp = (com.codename1.ui.spinner.NumericSpinner)findByName("HourSpinner", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.spinner.NumericSpinner)findByName("HourSpinner", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -248,18 +262,6 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.ui.Container)findByName("Container", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.ComboBox findNumberOfHoursList(Component root) {
-        return (com.codename1.ui.ComboBox)findByName("NumberOfHoursList", root);
-    }
-
-    public com.codename1.ui.ComboBox findNumberOfHoursList() {
-        com.codename1.ui.ComboBox cmp = (com.codename1.ui.ComboBox)findByName("NumberOfHoursList", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.ComboBox)findByName("NumberOfHoursList", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -597,9 +599,6 @@ public abstract class StateMachineBase extends UIBuilder {
         if("Area Of Interest List".equals(listName)) {
             return initListModelAreaOfInterestList(cmp);
         }
-        if("NumberOfHoursList".equals(listName)) {
-            return initListModelNumberOfHoursList(cmp);
-        }
         return super.setListModel(cmp);
     }
 
@@ -608,10 +607,6 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
     protected boolean initListModelAreaOfInterestList(List cmp) {
-        return false;
-    }
-
-    protected boolean initListModelNumberOfHoursList(List cmp) {
         return false;
     }
 
@@ -637,10 +632,6 @@ public abstract class StateMachineBase extends UIBuilder {
             }
             if("Area Of Interest List".equals(c.getName())) {
                 onMain_AreaOfInterestListAction(c, event);
-                return;
-            }
-            if("NumberOfHoursList".equals(c.getName())) {
-                onMain_NumberOfHoursListAction(c, event);
                 return;
             }
             if("Monday".equals(c.getName())) {
@@ -685,9 +676,6 @@ public abstract class StateMachineBase extends UIBuilder {
       }
 
       protected void onMain_AreaOfInterestListAction(Component c, ActionEvent event) {
-      }
-
-      protected void onMain_NumberOfHoursListAction(Component c, ActionEvent event) {
       }
 
       protected void onMain_MondayAction(Component c, ActionEvent event) {
