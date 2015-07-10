@@ -8,28 +8,32 @@
       <component type="Container" name="Information" cloudDestinationProperty="Container1" layout="TableLayout" tableLayoutRows="6" tableLayoutColumns="2" >
         <component type="Label" name="City Label" cloudDestinationProperty="Label" text="City" >
         </component>
-        <component type="ComboBox" name="City List" cloudDestinationProperty="ComboBox" uiid="Citycombo" >
-          <stringItem value="Union City" />
-          <stringItem value="Fremont" />
-          <stringItem value="Milpitas" />
-          <stringItem value="San Jose" />
-          <stringItem value="Cupertino" />
-          <stringItem value="Los Gatos" />
-          <stringItem value="Sunnyvale" />
-          <stringItem value="Mountain View" />
-          <stringItem value="Palo Alto" />
-          <stringItem value="Los Altos" />
-          <stringItem value="Redwood City" />
-          <stringItem value="San Francisco" />
+        <component type="GenericSpinner" name="CitySpinner" cloudDestinationProperty="CitySpinner" >
+          <custom name="items" type="java.lang.String" array="true" dimensions="1" >
+            <str>Union City</str>
+            <str>Fremont</str>
+            <str>Milpitas</str>
+            <str>San Jose</str>
+            <str>Cupertino</str>
+            <str>Los Gatos</str>
+            <str>Sunnyvale</str>
+            <str>Mountain View</str>
+            <str>Palo Alto</str>
+            <str>Los Altos</str>
+            <str>Redwood City</str>
+            <str>San Francisco </str>
+          </custom>
         </component>
         <component type="Label" name="Area Of Interest Label" cloudDestinationProperty="Label1" text="Area of Interest " >
         </component>
-        <component type="ComboBox" name="Area Of Interest List" cloudDestinationProperty="ComboBox1" uiid="Areacombo" >
-          <stringItem value="Children" />
-          <stringItem value="Elderly" />
-          <stringItem value="Disabled" />
-          <stringItem value="Poor" />
-          <stringItem value="Environment" />
+        <component type="GenericSpinner" name="InterestSpinner" cloudDestinationProperty="InterestSpinner" >
+          <custom name="items" type="java.lang.String" array="true" dimensions="1" >
+            <str>Children</str>
+            <str>Elderly</str>
+            <str>Disabled</str>
+            <str>Poor</str>
+            <str>Environment</str>
+          </custom>
         </component>
         <component type="Label" name="Number Of Hours Label" cloudDestinationProperty="Label2" text="# of Hours" >
         </component>
