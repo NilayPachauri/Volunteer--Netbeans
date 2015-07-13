@@ -362,16 +362,40 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
+    public static final int COMMAND_MainBack = 3;
     public static final int COMMAND_HomePageStartSearching = 1;
+    public static final int COMMAND_MainCommand2 = 2;
+
+    protected boolean onMainBack() {
+        return false;
+    }
 
     protected boolean onHomePageStartSearching() {
         return false;
     }
 
+    protected boolean onMainCommand2() {
+        return false;
+    }
+
     protected void processCommand(ActionEvent ev, Command cmd) {
         switch(cmd.getId()) {
+            case COMMAND_MainBack:
+                if(onMainBack()) {
+                    ev.consume();
+                    return;
+                }
+                break;
+
             case COMMAND_HomePageStartSearching:
                 if(onHomePageStartSearching()) {
+                    ev.consume();
+                    return;
+                }
+                break;
+
+            case COMMAND_MainCommand2:
+                if(onMainCommand2()) {
                     ev.consume();
                     return;
                 }

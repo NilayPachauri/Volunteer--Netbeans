@@ -79,6 +79,8 @@
     <image name="Dialog.borderTopL_1.png" type="multi"  />
     <image name="Dialog.borderTopR_1.png" type="multi"  />
     <legacyFont name="Font 1" />
+    <legacyFont name="Font 2" />
+    <legacyFont name="Font 3" />
     <ui name="Home Page" />
     <l10n name="Localization">
         <lang name="iw">
@@ -202,6 +204,7 @@
         <val key="@switchOnImage" value="switch_on.png" />
         <val key="@tabPlacementInt" value="0" />
         <val key="BackCommand.align" value="4" />
+        <val key="BackCommand.bgColor" value="ff0000" />
         <gradient key="BackCommand.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
         <val key="BackCommand.bgType" value="0" />
         <border key="BackCommand.border" type="empty" />
@@ -226,11 +229,10 @@
         <val key="BackCommand.sel#padUnit" value="2,2,2,2" />
         <val key="BackCommand.sel#padding" value="1,1,1,1" />
         <val key="BackCommand.sel#transparency" value="0" />
-        <val key="BackCommand.transparency" value="0" />
+        <val key="BackCommand.transparency" value="255" />
         <val key="Button.align" value="4" />
         <border key="Button.border" type="image" i1="Button.borderTop_1.png" i2="Button.borderBottom_1.png" i3="Button.borderLeft_1.png" i4="Button.borderRight_1.png" i5="Button.borderTopL_1.png" i6="Button.borderTopR_1.png" i7="Button.borderBottomL_1.png" i8="Button.borderBottomR_1.png" i9="Button.borderCenter_1.png" />
         <val key="Button.fgColor" value="ffffff" />
-        <font key="Button.font" type="system" face="0" style="0" size="0" />
         <val key="Button.marUnit" value="2,2,2,2" />
         <val key="Button.margin" value="1,1,1,1" />
         <val key="Button.padUnit" value="2,2,2,2" />
@@ -307,8 +309,9 @@
         <val key="CalendarSelectedDay.press#transparency" value="255" />
         <val key="CalendarSelectedDay.transparency" value="255" />
         <val key="CalendarTitle.align" value="4" />
+        <val key="CalendarTitle.bgColor" value="ff3333" />
         <val key="CalendarTitle.fgColor" value="ffffff" />
-        <font key="CalendarTitle.font" type="system" face="0" style="1" size="0" />
+        <val key="CalendarTitle.transparency" value="255" />
         <val key="CalendarTitleArea.align" value="4" />
         <val key="CalendarTitleArea.bgColor" value="ff3333" />
         <val key="CalendarTitleArea.fgColor" value="ffffff" />
@@ -317,7 +320,6 @@
         <val key="CheckBox.align" value="1" />
         <gradient key="CheckBox.bgGradient" color1="16777215" color2="16711680" posX="0.5" posY="0.5" radius="1.0" />
         <val key="CheckBox.bgType" value="0" />
-        <font key="CheckBox.font" type="system" face="0" style="0" size="0" />
         <val key="CheckBox.marUnit" value="1,1,1,1" />
         <val key="CheckBox.margin" value="1,1,1,1" />
         <val key="CheckBox.padUnit" value="1,1,1,1" />
@@ -429,7 +431,7 @@
         <val key="CommandList.sel#transparency" value="0" />
         <val key="CommandList.transparency" value="0" />
         <val key="Container.align" value="4" />
-        <gradient key="Container.bgGradient" color1="52428" color2="52428" posX="0.5" posY="0.5" radius="1.0" />
+        <gradient key="Container.bgGradient" color1="43718" color2="46505" posX="1.0" posY="0.01" radius="0.0" />
         <val key="Container.bgType" value="7" />
         <font key="Container.font" type="system" face="0" style="0" size="16" />
         <val key="Container.press#derive" value="Container" />
@@ -511,7 +513,6 @@
         <val key="ImageViewer.padding" value="0,0,0,0" />
         <val key="Label.align" value="4" />
         <val key="Label.fgColor" value="0" />
-        <font key="Label.font" type="system" face="0" style="0" size="0" />
         <border key="Label.press#border" type="empty" />
         <val key="Label.press#fgColor" value="ffffff" />
         <val key="Label.press#transparency" value="0" />
@@ -892,17 +893,4 @@
     <image name="TitleArea.borderTop_1.png" type="multi"  />
     <image name="TitleArea.borderTopL_1.png" type="multi"  />
     <image name="TitleArea.borderTopR_1.png" type="multi"  />
-    <theme name="VC 2">
-        <val key="@includeNativeBool" value="true" />
-        <val key="Button.bgColor" value="ff0000" />
-        <border key="Button.border" type="image" i1="Button.borderTop_4.png" i2="Button.borderBottom_4.png" i3="Button.borderLeft_4.png" i4="Button.borderRight_4.png" i5="Button.borderTopL_4.png" i6="Button.borderTopR_4.png" i7="Button.borderBottomL_4.png" i8="Button.borderBottomR_4.png" i9="Button.borderCenter_4.png" />
-        <val key="Button.fgColor" value="ffffff" />
-        <val key="Button.padUnit" value="1,1,1,1" />
-        <val key="Button.padding" value="1,1,1,1" />
-        <val key="Button.transparency" value="255" />
-        <val key="Title.bgColor" value="ff0000" />
-        <border key="Title.border" type="rounded" thickness="0" arcW="1" arcH="1" color="0" />
-        <val key="Title.fgColor" value="ffffff" />
-        <val key="Title.transparency" value="255" />
-    </theme>
 </resource>

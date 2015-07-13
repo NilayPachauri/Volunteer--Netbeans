@@ -149,14 +149,7 @@ public class StateMachine extends StateMachineBase{
         
         GenericSpinner interestSpinner = (GenericSpinner) findByName("InterestSpinner",c);
         String selectedInterest = (String) interestSpinner.getValue();
-        
-<<<<<<< HEAD
-      NumericSpinner numberOfHoursSpinner = (NumericSpinner) findByName("HourSpinner", c);
-       double selectedHour = numberOfHoursSpinner.getValue();
-       System.out.println(selectedHour);
-       numberOfHoursSpinner.setRenderingPrototype("XXXXXXXXXXXXX");
-        //double selectedHour = 2;    //just until we get the Numeric Spinner to work
-=======
+       
         NumericSpinner numberOfHoursSpinner = (NumericSpinner) findByName("HourSpinner", c);
         double selectedHour = numberOfHoursSpinner.getValue();
         
@@ -165,7 +158,7 @@ public class StateMachine extends StateMachineBase{
         citySpinner.setSize(size);
         interestSpinner.setSize(size);
         numberOfHoursSpinner.setSize(size);
->>>>>>> origin/master
+
 
         CheckBox monday = (CheckBox) findByName("Monday",c);
         boolean isSelectedMonday = monday.isSelected();

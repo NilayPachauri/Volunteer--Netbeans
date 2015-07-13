@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<component type="Form" name="Main" cloudDestinationProperty="Main" rtl="false" flatten="false" layout="BorderLayout" borderLayoutAbsoluteCenter="false" title=" " >
+<component type="Form" name="Main" cloudDestinationProperty="Main" rtl="false" flatten="false" layout="BorderLayout" borderLayoutAbsoluteCenter="false" title="Input Fields" >
   <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BorderLayout" borderLayoutAbsoluteCenter="true" >
     <layoutConstraint value="Center" />
     <component type="Container" name="Container4" cloudDestinationProperty="Container4" focusable="false" layout="FlowLayout" flowLayoutFillRows="false" flowLayoutAlign="1" flowLayoutValign="0" >
@@ -27,6 +27,7 @@
         <component type="Label" name="Area Of Interest Label" cloudDestinationProperty="Label1" text="Area of Interest " >
         </component>
         <component type="GenericSpinner" name="InterestSpinner" cloudDestinationProperty="InterestSpinner" snapToGrid="false" flatten="false" >
+          <layoutConstraint row="-1" column="-1" height="-1" width="100" align="-1" spanHorizontal="1" valign="-1" spanVertical="1" />
           <custom name="items" type="java.lang.String" array="true" dimensions="1" >
             <str>Children</str>
             <str>Elderly</str>
@@ -38,6 +39,7 @@
         <component type="Label" name="Number Of Hours Label" cloudDestinationProperty="Label2" text="# of Hours" >
         </component>
         <component type="NumericSpinner" name="HourSpinner" cloudDestinationProperty="HourSpinner" snapToGrid="false" flatten="false" >
+          <layoutConstraint row="-1" column="-1" height="-1" width="100" align="-1" spanHorizontal="1" valign="-1" spanVertical="1" />
           <custom name="min" type="java.lang.Double" value="1.0" />
           <custom name="max" type="java.lang.Double" value="13.0" />
         </component>
@@ -63,4 +65,4 @@
       </component>
     </component>
   </component>
-</component>
+<command name="Back" icon="cal_left_arrow.png" id="3" action="$Back" backCommand="false" /><command name="" id="2" action="" backCommand="false" /></component>
