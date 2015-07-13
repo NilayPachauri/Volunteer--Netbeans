@@ -151,6 +151,7 @@ public class StateMachine extends StateMachineBase{
       NumericSpinner numberOfHoursSpinner = (NumericSpinner) findByName("HourSpinner", c);
        double selectedHour = numberOfHoursSpinner.getValue();
        System.out.println(selectedHour);
+       numberOfHoursSpinner.setRenderingPrototype("XXXXXXXXXXXXX");
         //double selectedHour = 2;    //just until we get the Numeric Spinner to work
 
         CheckBox monday = (CheckBox) findByName("Monday",c);
