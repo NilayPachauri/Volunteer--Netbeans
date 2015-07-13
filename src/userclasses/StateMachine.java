@@ -6,17 +6,19 @@ package userclasses;
 
 import com.codename1.io.CSVParser;
 import com.codename1.ui.CheckBox;
-import com.codename1.ui.ComboBox;
 import com.codename1.ui.Component;
 import com.codename1.ui.Display;
 import com.codename1.ui.Form;
 import com.codename1.ui.events.ActionEvent;
+import com.codename1.ui.geom.Dimension;
+import com.codename1.ui.spinner.GenericSpinner;
 import com.codename1.ui.spinner.NumericSpinner;
 import generated.StateMachineBase;
 import com.codename1.ui.util.Resources;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Vector;
+import javafx.scene.control.Spinner;
 
 
 /**
@@ -74,7 +76,7 @@ public class StateMachine extends StateMachineBase{
 		for (int i = increment; i < sortedListOfAgencies.size(); i++) {
 			int j = i;
 			Agency temp = sortedListOfAgencies.get(i);
-			while (j >= increment && sortedListOfAgencies.get(j - increment).percentMatch(userPreferences) > temp.percentMatch(userPreferences)) {
+			while (j >= increment && sortedListOfAgencies.get(j - increment).percentMatch(userPreferences) < temp.percentMatch(userPreferences)) {
 				sortedListOfAgencies.set(j,sortedListOfAgencies.get(j - increment));
 				j = j - increment;
 			}
@@ -142,17 +144,28 @@ public class StateMachine extends StateMachineBase{
     @Override
     protected void onMain_EnterAction(Component c, ActionEvent event) {
 
-        ComboBox cityList = (ComboBox) findByName("City List",c);
-        String selectedCity = (String) cityList.getSelectedItem();
+        GenericSpinner citySpinner = (GenericSpinner) findByName("CitySpinner",c);
+        String selectedCity = (String) citySpinner.getValue();
         
-        ComboBox areaOfInterestList = (ComboBox) findByName("Area Of Interest List",c);
-        String selectedAreaOfInterest = (String) areaOfInterestList.getSelectedItem();
+        GenericSpinner interestSpinner = (GenericSpinner) findByName("InterestSpinner",c);
+        String selectedInterest = (String) interestSpinner.getValue();
         
+<<<<<<< HEAD
       NumericSpinner numberOfHoursSpinner = (NumericSpinner) findByName("HourSpinner", c);
        double selectedHour = numberOfHoursSpinner.getValue();
        System.out.println(selectedHour);
        numberOfHoursSpinner.setRenderingPrototype("XXXXXXXXXXXXX");
         //double selectedHour = 2;    //just until we get the Numeric Spinner to work
+=======
+        NumericSpinner numberOfHoursSpinner = (NumericSpinner) findByName("HourSpinner", c);
+        double selectedHour = numberOfHoursSpinner.getValue();
+        
+        Dimension size = new Dimension(60,60);
+        
+        citySpinner.setSize(size);
+        interestSpinner.setSize(size);
+        numberOfHoursSpinner.setSize(size);
+>>>>>>> origin/master
 
         CheckBox monday = (CheckBox) findByName("Monday",c);
         boolean isSelectedMonday = monday.isSelected();
@@ -176,8 +189,9 @@ public class StateMachine extends StateMachineBase{
         boolean isSelectedSunday = sunday.isSelected();
         
         //System.out.println(findByName("Number Of Hours Spinner",c).getPropertyTypes());
-        
-        UserInput userChoices = new UserInput(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday);
+
+        UserInput userChoices = new UserInput(selectedCity, selectedInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday);
+
                 
 //        //checking to see if these values are correct
 //        
@@ -186,6 +200,7 @@ public class StateMachine extends StateMachineBase{
 //        System.out.println(selectedHour);
 //        System.out.println(isSelectedMonday);
 //        System.out.println(isSelectedTuesday);
+        
 //        System.out.println(isSelectedWednesday);
 //        System.out.println(isSelectedThursday);
 //        System.out.println(isSelectedFriday);
@@ -196,6 +211,21 @@ public class StateMachine extends StateMachineBase{
         
         for (int i = 0; i < sortedListOfAgencies.size(); i++)   {
             System.out.println(sortedListOfAgencies.get(i).percentMatch(userChoices));
+            System.out.println(sortedListOfAgencies.get(i).getName());
         }
+    }
+
+    @Override
+    protected void beforeMain(Form f) {
+        Dimension size = new Dimension(200,50);
+        
+        GenericSpinner citySpinner = (GenericSpinner) findByName("CitySpinner",f);
+        citySpinner.setPreferredSize(size);
+         
+        GenericSpinner interestSpinner = (GenericSpinner) findByName("InterestSpinner",f);
+        interestSpinner.setPreferredSize(size);
+                
+        NumericSpinner hourSpinner= (NumericSpinner) findByName("HourSpinner",f);
+        hourSpinner.setPreferredSize(size);
     }
 }
