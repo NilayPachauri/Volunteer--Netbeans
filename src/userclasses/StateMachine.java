@@ -152,18 +152,13 @@ public class StateMachine extends StateMachineBase{
        
         NumericSpinner numberOfHoursSpinner = (NumericSpinner) findByName("HourSpinner", c);
         double selectedHour = numberOfHoursSpinner.getValue();
-        
-<<<<<<< HEAD
-      NumericSpinner numberOfHoursSpinner = (NumericSpinner) findByName("HourSpinner", c);
-       double selectedHour = numberOfHoursSpinner.getValue();        
-=======
+
         Dimension size = new Dimension(60,60);
         
         citySpinner.setSize(size);
         interestSpinner.setSize(size);
         numberOfHoursSpinner.setSize(size);
 
->>>>>>> origin/master
 
         CheckBox monday = (CheckBox) findByName("Monday",c);
         boolean isSelectedMonday = monday.isSelected();
@@ -186,16 +181,11 @@ public class StateMachine extends StateMachineBase{
         CheckBox sunday = (CheckBox) findByName("Sunday",c);
         boolean isSelectedSunday = sunday.isSelected();
         
-<<<<<<< HEAD
-        
 
-        UserInput userChoices = new UserInput(selectedCity, selectedAreaOfInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday);
-=======
-        //System.out.println(findByName("Number Of Hours Spinner",c).getPropertyTypes());
-
+       
         UserInput userChoices = new UserInput(selectedCity, selectedInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday);
 
->>>>>>> origin/master
+
                 
 //        //checking to see if these values are correct
 //        
