@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<component type="Form" name="Main" cloudDestinationProperty="Main" rtl="false" flatten="false" layout="BorderLayout" borderLayoutAbsoluteCenter="false" title="Input Fields" >
+<component type="Form" name="Main" cloudDestinationProperty="Main" rtl="false" scrollVisible="false" flatten="false" scrollableX="false" scrollableY="false" layout="BorderLayout" borderLayoutAbsoluteCenter="false" title="Input Fields" >
   <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BorderLayout" borderLayoutAbsoluteCenter="true" >
     <layoutConstraint value="Center" />
     <component type="Container" name="Container4" cloudDestinationProperty="Container4" focusable="false" layout="FlowLayout" flowLayoutFillRows="false" flowLayoutAlign="1" flowLayoutValign="0" >
