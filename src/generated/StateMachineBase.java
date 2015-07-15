@@ -71,7 +71,7 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
     protected String getFirstFormName() {
-        return "Main";
+        return "Home Page";
     }
 
     public Container createWidget(Resources res, String resPath, boolean loadTheme) {
@@ -93,7 +93,7 @@ public abstract class StateMachineBase extends UIBuilder {
             }
             initTheme(res);
         }
-        return createContainer(resPath, "Main");
+        return createContainer(resPath, "Home Page");
     }
 
     protected void initTheme(Resources res) {
@@ -202,6 +202,18 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container4", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.ui.Container)findByName("Container4", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Container findContainer1(Component root) {
+        return (com.codename1.ui.Container)findByName("Container1", root);
+    }
+
+    public com.codename1.ui.Container findContainer1() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container1", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Container)findByName("Container1", aboutToShowThisContainer);
         }
         return cmp;
     }
