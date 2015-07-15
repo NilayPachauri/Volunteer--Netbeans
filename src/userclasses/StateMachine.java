@@ -4,12 +4,14 @@
 
 package userclasses;
 
+import com.codename1.components.InfiniteScrollAdapter;
 import com.codename1.io.CSVParser;
 import com.codename1.ui.CheckBox;
 import com.codename1.ui.Component;
 import com.codename1.ui.Display;
 import com.codename1.ui.Form;
 import com.codename1.ui.events.ActionEvent;
+import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.geom.Dimension;
 import com.codename1.ui.spinner.GenericSpinner;
 import com.codename1.ui.spinner.NumericSpinner;
@@ -152,7 +154,7 @@ public class StateMachine extends StateMachineBase{
        
         NumericSpinner numberOfHoursSpinner = (NumericSpinner) findByName("HourSpinner", c);
         double selectedHour = numberOfHoursSpinner.getValue();
-        
+
         Dimension size = new Dimension(60,60);
         
         citySpinner.setSize(size);
@@ -181,9 +183,10 @@ public class StateMachine extends StateMachineBase{
         CheckBox sunday = (CheckBox) findByName("Sunday",c);
         boolean isSelectedSunday = sunday.isSelected();
         
-        //System.out.println(findByName("Number Of Hours Spinner",c).getPropertyTypes());
 
+       
         UserInput userChoices = new UserInput(selectedCity, selectedInterest, selectedHour, isSelectedMonday, isSelectedTuesday, isSelectedWednesday, isSelectedThursday, isSelectedFriday, isSelectedSaturday, isSelectedSunday);
+
 
                 
 //        //checking to see if these values are correct
@@ -210,15 +213,35 @@ public class StateMachine extends StateMachineBase{
 
     @Override
     protected void beforeMain(Form f) {
-        Dimension size = new Dimension(200,50);
+//        Dimension size = new Dimension(200,50);
+//        
+//        GenericSpinner citySpinner = (GenericSpinner) findByName("CitySpinner",f);
+//        citySpinner.setPreferredSize(size);
+//         
+//        GenericSpinner interestSpinner = (GenericSpinner) findByName("InterestSpinner",f);
+//        interestSpinner.setPreferredSize(size);
+//                
+//        NumericSpinner hourSpinner= (NumericSpinner) findByName("HourSpinner",f);
+//        hourSpinner.setPreferredSize(size);
+//        
+//        f.setScrollableY(true);
+//        
+//        InfiniteScrollAdapter.createInfiniteScroll(f.getContentPane(), new Runnable()); 
+//        
+        f.setSmoothScrolling(true);
         
-        GenericSpinner citySpinner = (GenericSpinner) findByName("CitySpinner",f);
-        citySpinner.setPreferredSize(size);
-         
-        GenericSpinner interestSpinner = (GenericSpinner) findByName("InterestSpinner",f);
-        interestSpinner.setPreferredSize(size);
-                
-        NumericSpinner hourSpinner= (NumericSpinner) findByName("HourSpinner",f);
-        hourSpinner.setPreferredSize(size);
+        public class Scrollable implements ActionListener   {
+
+        public void actionPerformed(ActionEvent evt) {
+                evt.
+            }
+            
+        }
+        
+        f.addPointerDraggedListener();
+        
+        
     }
+
+
 }
