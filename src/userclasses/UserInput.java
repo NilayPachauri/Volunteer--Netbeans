@@ -7,7 +7,7 @@ package userclasses;
 
 /**
  *
- * @author Nilay Pachauri
+ * @author Nilay Pachauri, Harshayu Girase, Akash Singhal
  */
 public class UserInput {
     private String userCity;
