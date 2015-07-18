@@ -36,6 +36,7 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("NumericSpinner", com.codename1.ui.spinner.NumericSpinner.class);
         UIBuilder.registerCustomComponent("Container", com.codename1.ui.Container.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
+        UIBuilder.registerCustomComponent("Button", com.codename1.ui.Button.class);
         UIBuilder.registerCustomComponent("CheckBox", com.codename1.ui.CheckBox.class);
         UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
         UIBuilder.registerCustomComponent("SpanButton", com.codename1.components.SpanButton.class);
@@ -78,6 +79,7 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("NumericSpinner", com.codename1.ui.spinner.NumericSpinner.class);
         UIBuilder.registerCustomComponent("Container", com.codename1.ui.Container.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
+        UIBuilder.registerCustomComponent("Button", com.codename1.ui.Button.class);
         UIBuilder.registerCustomComponent("CheckBox", com.codename1.ui.CheckBox.class);
         UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
         UIBuilder.registerCustomComponent("SpanButton", com.codename1.components.SpanButton.class);
@@ -200,6 +202,18 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container4", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.ui.Container)findByName("Container4", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Container findContainer1(Component root) {
+        return (com.codename1.ui.Container)findByName("Container1", root);
+    }
+
+    public com.codename1.ui.Container findContainer1() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container1", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Container)findByName("Container1", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -348,16 +362,37 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.components.SpanButton findStartSearching(Component root) {
-        return (com.codename1.components.SpanButton)findByName("Start Searching", root);
+    public com.codename1.ui.Button findStartSearching(Component root) {
+        return (com.codename1.ui.Button)findByName("Start Searching", root);
     }
 
-    public com.codename1.components.SpanButton findStartSearching() {
-        com.codename1.components.SpanButton cmp = (com.codename1.components.SpanButton)findByName("Start Searching", Display.getInstance().getCurrent());
+    public com.codename1.ui.Button findStartSearching() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("Start Searching", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.components.SpanButton)findByName("Start Searching", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Button)findByName("Start Searching", aboutToShowThisContainer);
         }
         return cmp;
+    }
+
+    public static final int COMMAND_HomePagePressToStartSeaching = 1;
+
+    protected boolean onHomePagePressToStartSeaching() {
+        return false;
+    }
+
+    protected void processCommand(ActionEvent ev, Command cmd) {
+        switch(cmd.getId()) {
+            case COMMAND_HomePagePressToStartSeaching:
+                if(onHomePagePressToStartSeaching()) {
+                    ev.consume();
+                    return;
+                }
+                break;
+
+        }
+        if(ev.getComponent() != null) {
+            handleComponentAction(ev.getComponent(), ev);
+        }
     }
 
     protected void exitForm(Form f) {

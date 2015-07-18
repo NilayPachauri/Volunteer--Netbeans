@@ -100,13 +100,13 @@
             <entry key="t2g.slowConnection" value=" &#x5d4;&#x5ea;&#x5e7;&#x5e9;&#x5d5;&#x5e8;&#x5ea; &#x5d0;&#x5d9;&#x5d8;&#x5d9;&#x5ea;, &#x5e2;&#x5d5;&#x5d3; &#x5e8;&#x5d2;&#x5e2; &#x5d1;&#x5d0;&#x5d5;&#x5d5;&#x5d9;&#x5e8;" />
             <entry key="t2g.checkinAbroadAnd" value="(&#x5d0;&#x5dd; &#x5d0;&#x5ea;&#x5d4; &#x5d1;&#x5d7;&#x5d5;&quot;&#x5dc; &#x5d5;&#x5d0;&#x5ea;&#x5d4; &#x5e2;&#x5d3;&#x5d9;&#x5d9;&#x5df; &#x5e8;&#x5d5;&#x5d0;&#x5d4; &#x5d4;&#x5d5;&#x5d3;&#x5e2;&#x5d4; &#x5d6;&#x5d5;, &#x5d5;&#x5d5;&#x5d3;&#x5d0; &#x5db;&#x5d9; &#x5d4;-GPS &#x5d3;&#x5dc;&#x5d5;&#x5e7;)" />
             <entry key="t2g.serverErr" value="&#x5d0;&#x5d5;&#x5e4;&#x5e1;...&#x5d9;&#x5e9; &#x5dc;&#x5e0;&#x5d5; &#x5d1;&#x5e2;&#x5d9;&#x5d4; &#x5d6;&#x5de;&#x5e0;&#x5d9;&#x5ea;, &#x5d0;&#x5e0;&#x5d0; &#x5e0;&#x5e1;&#x5d4; &#x5de;&#x5d0;&#x5d5;&#x5d7;&#x5e8; &#x5d9;&#x5d5;&#x5ea;&#x5e8;." />
-            <entry key="t2g.networkErr" value="&#x5d1;&#x5e2;&#x5d9;&#x5d9;&#x5ea; &#x5e8;&#x5e9;&#x5ea;, &#x5e0;&#x5e1;&#x5d4; &#x5e9;&#x5d5;&#x5d1; &#x5de;&#x5d0;&#x5d5;&#x5d7;&#x5e8; &#x5d9;&#x5d5;&#x5ea;&#x5e8;" />
-            <entry key="t2g.checkinAbroad" value="&#x5e0;&#x5d9;&#x5ea;&#x5df; &#x5dc;&#x5d1;&#x5e6;&#x5e2; &#x5e4;&#x5e2;&#x5d5;&#x5dc;&#x5d4; &#x5d6;&#x5d5; &#x5de;&#x5d7;&#x5d5;&quot;&#x5dc; &#x5d0;&#x5d5; &#x5de;&#x5e0;&#x5ea;&#x5d1;&quot;&#x5d2;" />
             <entry key="t2g.gameabroad" value="&#x5d4;&#x5e9;&#x5ea;&#x5ea;&#x5e4;&#x5d5;&#x5ea; &#x5d1;&#x5de;&#x5e9;&#x5d7;&#x5e7; Travelmaker &#x5ea;&#x5ea;&#x5d0;&#x5e4;&#x5e9;&#x5e8; &#x5e8;&#x5e7; &#x5d1;&#x5d7;&#x5d5;&quot;&#x5dc;, &#x5d0;&#x5dc; &#x5ea;&#x5e9;&#x5db;&#x5d7;&#x5d5; &#x5dc;&#x5d7;&#x5d6;&#x5d5;&#x5e8; &#x5d0;&#x5dc;&#x5d9;&#x5e0;&#x5d5; &#x5db;&#x5e9;&#x5ea;&#x5e0;&#x5d7;&#x5ea;&#x5d5; &#x5d1;&#x5d9;&#x5e2;&#x5d3;!" />
+            <entry key="t2g.checkinAbroad" value="&#x5e0;&#x5d9;&#x5ea;&#x5df; &#x5dc;&#x5d1;&#x5e6;&#x5e2; &#x5e4;&#x5e2;&#x5d5;&#x5dc;&#x5d4; &#x5d6;&#x5d5; &#x5de;&#x5d7;&#x5d5;&quot;&#x5dc; &#x5d0;&#x5d5; &#x5de;&#x5e0;&#x5ea;&#x5d1;&quot;&#x5d2;" />
+            <entry key="t2g.networkErr" value="&#x5d1;&#x5e2;&#x5d9;&#x5d9;&#x5ea; &#x5e8;&#x5e9;&#x5ea;, &#x5e0;&#x5e1;&#x5d4; &#x5e9;&#x5d5;&#x5d1; &#x5de;&#x5d0;&#x5d5;&#x5d7;&#x5e8; &#x5d9;&#x5d5;&#x5ea;&#x5e8;" />
             <entry key="ok" value="" />
             <entry key="t2g.gifts" value="&#x5ea;&#x5d4;&#x5e0;&#x5d4; &#x5de;&#x5de;&#x5d2;&#x5d5;&#x5d5;&#x5df; &#x5de;&#x5ea;&#x5e0;&#x5d5;&#x5ea; &#x5d5;&#x5d4;&#x5d8;&#x5d1;&#x5d5;&#x5ea;!" />
-            <entry key="edit" value="" />
             <entry key="select" value="" />
+            <entry key="edit" value="" />
             <entry key="t2g.slow3" value="&#x5e2;&#x5d5;&#x5d3; &#x5e8;&#x5d2;&#x5e2; &#x5d1;&#x5d0;&#x5d5;&#x5d5;&#x5d9;&#x5e8;!" />
             <entry key="t2g.slow2" value="&#x5d4;&#x5ea;&#x5e7;&#x5e9;&#x5d5;&#x5e8;&#x5ea; &#x5d0;&#x5d9;&#x5d8;&#x5d9;&#x5ea;..." />
             <entry key="t2g.slow1" value="&#x5d0;&#x5d5;&#x5e4;&#x5e1;..." />
@@ -131,13 +131,13 @@
             <entry key="t2g.slowConnection" value="Slow connection..." />
             <entry key="t2g.checkinAbroadAnd" value=" (if you are abroad and you still see this message, make sure your gps is turned on)" />
             <entry key="t2g.serverErr" value="We have a problem, please try later." />
-            <entry key="t2g.networkErr" value="Network error occured try later" />
-            <entry key="t2g.checkinAbroad" value="Check In is only allowed when you are abroad or from the air port" />
             <entry key="t2g.gameabroad" value="You can participate in the game only once you&#x2019;ve reached your destination. Don&#x2019;t forget to come back once you&#x2019;ve arrived!" />
+            <entry key="t2g.checkinAbroad" value="Check In is only allowed when you are abroad or from the air port" />
+            <entry key="t2g.networkErr" value="Network error occured try later" />
             <entry key="ok" value="OK" />
             <entry key="t2g.gifts" value="Win gifts!" />
-            <entry key="edit" value="Edit" />
             <entry key="select" value="Select" />
+            <entry key="edit" value="Edit" />
             <entry key="t2g.slow3" value="we'll be on air in a minute" />
             <entry key="t2g.slow2" value="seems like connection is slow" />
             <entry key="t2g.slow1" value="Oops," />

@@ -230,18 +230,8 @@ public class StateMachine extends StateMachineBase{
 //        
         f.setSmoothScrolling(true);
         
-        public class Scrollable implements ActionListener   {
 
-        public void actionPerformed(ActionEvent evt) {
-                evt.
-            }
-            
-        }
-        
-        f.addPointerDraggedListener();
-        
-        
+
     }
-
-
 }
+
