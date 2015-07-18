@@ -40,6 +40,7 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("CheckBox", com.codename1.ui.CheckBox.class);
         UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
         UIBuilder.registerCustomComponent("SpanButton", com.codename1.components.SpanButton.class);
+        UIBuilder.registerCustomComponent("MultiList", com.codename1.ui.list.MultiList.class);
         UIBuilder.registerCustomComponent("SpanLabel", com.codename1.components.SpanLabel.class);
         UIBuilder.registerCustomComponent("GenericSpinner", com.codename1.ui.spinner.GenericSpinner.class);
         if(loadTheme) {
@@ -83,6 +84,7 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("CheckBox", com.codename1.ui.CheckBox.class);
         UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
         UIBuilder.registerCustomComponent("SpanButton", com.codename1.components.SpanButton.class);
+        UIBuilder.registerCustomComponent("MultiList", com.codename1.ui.list.MultiList.class);
         UIBuilder.registerCustomComponent("SpanLabel", com.codename1.components.SpanLabel.class);
         UIBuilder.registerCustomComponent("GenericSpinner", com.codename1.ui.spinner.GenericSpinner.class);
         if(loadTheme) {
@@ -120,18 +122,6 @@ public abstract class StateMachineBase extends UIBuilder {
 
     public StateMachineBase(Resources res, boolean loadTheme) {
         this(res, null, loadTheme);
-    }
-
-    public com.codename1.ui.Label findCityLabel(Component root) {
-        return (com.codename1.ui.Label)findByName("City Label", root);
-    }
-
-    public com.codename1.ui.Label findCityLabel() {
-        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("City Label", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Label)findByName("City Label", aboutToShowThisContainer);
-        }
-        return cmp;
     }
 
     public com.codename1.ui.Label findNumberOfHoursLabel(Component root) {
@@ -182,18 +172,6 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.spinner.GenericSpinner findCitySpinner(Component root) {
-        return (com.codename1.ui.spinner.GenericSpinner)findByName("CitySpinner", root);
-    }
-
-    public com.codename1.ui.spinner.GenericSpinner findCitySpinner() {
-        com.codename1.ui.spinner.GenericSpinner cmp = (com.codename1.ui.spinner.GenericSpinner)findByName("CitySpinner", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.spinner.GenericSpinner)findByName("CitySpinner", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
     public com.codename1.ui.Container findContainer4(Component root) {
         return (com.codename1.ui.Container)findByName("Container4", root);
     }
@@ -208,6 +186,7 @@ public abstract class StateMachineBase extends UIBuilder {
 
     public com.codename1.ui.Container findContainer1(Component root) {
         return (com.codename1.ui.Container)findByName("Container1", root);
+<<<<<<< Updated upstream
     }
 
     public com.codename1.ui.Container findContainer1() {
@@ -220,12 +199,14 @@ public abstract class StateMachineBase extends UIBuilder {
 
     public com.codename1.components.SpanLabel findSpanLabel(Component root) {
         return (com.codename1.components.SpanLabel)findByName("SpanLabel", root);
+=======
+>>>>>>> Stashed changes
     }
 
-    public com.codename1.components.SpanLabel findSpanLabel() {
-        com.codename1.components.SpanLabel cmp = (com.codename1.components.SpanLabel)findByName("SpanLabel", Display.getInstance().getCurrent());
+    public com.codename1.ui.Container findContainer1() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container1", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.components.SpanLabel)findByName("SpanLabel", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Container)findByName("Container1", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -278,18 +259,19 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.CheckBox findThursday(Component root) {
-        return (com.codename1.ui.CheckBox)findByName("Thursday", root);
+    public com.codename1.ui.CheckBox findFriday(Component root) {
+        return (com.codename1.ui.CheckBox)findByName("Friday", root);
     }
 
-    public com.codename1.ui.CheckBox findThursday() {
-        com.codename1.ui.CheckBox cmp = (com.codename1.ui.CheckBox)findByName("Thursday", Display.getInstance().getCurrent());
+    public com.codename1.ui.CheckBox findFriday() {
+        com.codename1.ui.CheckBox cmp = (com.codename1.ui.CheckBox)findByName("Friday", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.CheckBox)findByName("Thursday", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.CheckBox)findByName("Friday", aboutToShowThisContainer);
         }
         return cmp;
     }
 
+<<<<<<< Updated upstream
     public com.codename1.ui.Button findButton(Component root) {
         return (com.codename1.ui.Button)findByName("Button", root);
     }
@@ -304,12 +286,120 @@ public abstract class StateMachineBase extends UIBuilder {
 
     public com.codename1.ui.CheckBox findFriday(Component root) {
         return (com.codename1.ui.CheckBox)findByName("Friday", root);
+=======
+    public com.codename1.ui.Container findDays(Component root) {
+        return (com.codename1.ui.Container)findByName("Days", root);
+>>>>>>> Stashed changes
     }
 
-    public com.codename1.ui.CheckBox findFriday() {
-        com.codename1.ui.CheckBox cmp = (com.codename1.ui.CheckBox)findByName("Friday", Display.getInstance().getCurrent());
+    public com.codename1.ui.Container findDays() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Days", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.CheckBox)findByName("Friday", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Container)findByName("Days", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.CheckBox findTuesday(Component root) {
+        return (com.codename1.ui.CheckBox)findByName("Tuesday", root);
+    }
+
+    public com.codename1.ui.CheckBox findTuesday() {
+        com.codename1.ui.CheckBox cmp = (com.codename1.ui.CheckBox)findByName("Tuesday", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.CheckBox)findByName("Tuesday", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.components.SpanButton findStartSearching(Component root) {
+        return (com.codename1.components.SpanButton)findByName("Start Searching", root);
+    }
+
+    public com.codename1.components.SpanButton findStartSearching() {
+        com.codename1.components.SpanButton cmp = (com.codename1.components.SpanButton)findByName("Start Searching", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.components.SpanButton)findByName("Start Searching", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findCityLabel(Component root) {
+        return (com.codename1.ui.Label)findByName("City Label", root);
+    }
+
+    public com.codename1.ui.Label findCityLabel() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("City Label", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("City Label", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.spinner.GenericSpinner findCitySpinner(Component root) {
+        return (com.codename1.ui.spinner.GenericSpinner)findByName("CitySpinner", root);
+    }
+
+    public com.codename1.ui.spinner.GenericSpinner findCitySpinner() {
+        com.codename1.ui.spinner.GenericSpinner cmp = (com.codename1.ui.spinner.GenericSpinner)findByName("CitySpinner", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.spinner.GenericSpinner)findByName("CitySpinner", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.list.MultiList findMultiList(Component root) {
+        return (com.codename1.ui.list.MultiList)findByName("MultiList", root);
+    }
+
+    public com.codename1.ui.list.MultiList findMultiList() {
+        com.codename1.ui.list.MultiList cmp = (com.codename1.ui.list.MultiList)findByName("MultiList", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.list.MultiList)findByName("MultiList", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+<<<<<<< Updated upstream
+    public static final int COMMAND_HomePageStartSearching = 1;
+
+    protected boolean onHomePageStartSearching() {
+        return false;
+    }
+
+    protected void processCommand(ActionEvent ev, Command cmd) {
+        switch(cmd.getId()) {
+            case COMMAND_HomePageStartSearching:
+                if(onHomePageStartSearching()) {
+                    ev.consume();
+                    return;
+                }
+                break;
+
+        }
+        if(ev.getComponent() != null) {
+            handleComponentAction(ev.getComponent(), ev);
+=======
+    public com.codename1.components.SpanLabel findSpanLabel(Component root) {
+        return (com.codename1.components.SpanLabel)findByName("SpanLabel", root);
+    }
+
+    public com.codename1.components.SpanLabel findSpanLabel() {
+        com.codename1.components.SpanLabel cmp = (com.codename1.components.SpanLabel)findByName("SpanLabel", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.components.SpanLabel)findByName("SpanLabel", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.CheckBox findThursday(Component root) {
+        return (com.codename1.ui.CheckBox)findByName("Thursday", root);
+    }
+
+    public com.codename1.ui.CheckBox findThursday() {
+        com.codename1.ui.CheckBox cmp = (com.codename1.ui.CheckBox)findByName("Thursday", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.CheckBox)findByName("Thursday", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -338,18 +428,6 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.Container findDays(Component root) {
-        return (com.codename1.ui.Container)findByName("Days", root);
-    }
-
-    public com.codename1.ui.Container findDays() {
-        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Days", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Container)findByName("Days", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
     public com.codename1.components.SpanButton findEnter(Component root) {
         return (com.codename1.components.SpanButton)findByName("Enter", root);
     }
@@ -358,46 +436,19 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.components.SpanButton cmp = (com.codename1.components.SpanButton)findByName("Enter", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.components.SpanButton)findByName("Enter", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.CheckBox findTuesday(Component root) {
-        return (com.codename1.ui.CheckBox)findByName("Tuesday", root);
-    }
-
-    public com.codename1.ui.CheckBox findTuesday() {
-        com.codename1.ui.CheckBox cmp = (com.codename1.ui.CheckBox)findByName("Tuesday", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.CheckBox)findByName("Tuesday", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public static final int COMMAND_HomePageStartSearching = 1;
-
-    protected boolean onHomePageStartSearching() {
-        return false;
-    }
-
-    protected void processCommand(ActionEvent ev, Command cmd) {
-        switch(cmd.getId()) {
-            case COMMAND_HomePageStartSearching:
-                if(onHomePageStartSearching()) {
-                    ev.consume();
-                    return;
-                }
-                break;
-
-        }
-        if(ev.getComponent() != null) {
-            handleComponentAction(ev.getComponent(), ev);
+>>>>>>> Stashed changes
         }
     }
 
     protected void exitForm(Form f) {
         if("Home Page".equals(f.getName())) {
             exitHomePage(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("Search Results".equals(f.getName())) {
+            exitSearchResults(f);
             aboutToShowThisContainer = null;
             return;
         }
@@ -416,6 +467,10 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void exitSearchResults(Form f) {
+    }
+
+
     protected void exitMain(Form f) {
     }
 
@@ -423,6 +478,12 @@ public abstract class StateMachineBase extends UIBuilder {
     aboutToShowThisContainer = f;
         if("Home Page".equals(f.getName())) {
             beforeHomePage(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("Search Results".equals(f.getName())) {
+            beforeSearchResults(f);
             aboutToShowThisContainer = null;
             return;
         }
@@ -441,6 +502,10 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void beforeSearchResults(Form f) {
+    }
+
+
     protected void beforeMain(Form f) {
     }
 
@@ -448,6 +513,12 @@ public abstract class StateMachineBase extends UIBuilder {
         aboutToShowThisContainer = c;
         if("Home Page".equals(c.getName())) {
             beforeContainerHomePage(c);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("Search Results".equals(c.getName())) {
+            beforeContainerSearchResults(c);
             aboutToShowThisContainer = null;
             return;
         }
@@ -466,12 +537,22 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void beforeContainerSearchResults(Container c) {
+    }
+
+
     protected void beforeContainerMain(Container c) {
     }
 
     protected void postShow(Form f) {
         if("Home Page".equals(f.getName())) {
             postHomePage(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("Search Results".equals(f.getName())) {
+            postSearchResults(f);
             aboutToShowThisContainer = null;
             return;
         }
@@ -490,12 +571,22 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void postSearchResults(Form f) {
+    }
+
+
     protected void postMain(Form f) {
     }
 
     protected void postShowContainer(Container c) {
         if("Home Page".equals(c.getName())) {
             postContainerHomePage(c);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("Search Results".equals(c.getName())) {
+            postContainerSearchResults(c);
             aboutToShowThisContainer = null;
             return;
         }
@@ -514,12 +605,22 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void postContainerSearchResults(Container c) {
+    }
+
+
     protected void postContainerMain(Container c) {
     }
 
     protected void onCreateRoot(String rootName) {
         if("Home Page".equals(rootName)) {
             onCreateHomePage();
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("Search Results".equals(rootName)) {
+            onCreateSearchResults();
             aboutToShowThisContainer = null;
             return;
         }
@@ -538,6 +639,10 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void onCreateSearchResults() {
+    }
+
+
     protected void onCreateMain() {
     }
 
@@ -545,6 +650,12 @@ public abstract class StateMachineBase extends UIBuilder {
         Hashtable h = super.getFormState(f);
         if("Home Page".equals(f.getName())) {
             getStateHomePage(f, h);
+            aboutToShowThisContainer = null;
+            return h;
+        }
+
+        if("Search Results".equals(f.getName())) {
+            getStateSearchResults(f, h);
             aboutToShowThisContainer = null;
             return h;
         }
@@ -563,6 +674,10 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void getStateSearchResults(Form f, Hashtable h) {
+    }
+
+
     protected void getStateMain(Form f, Hashtable h) {
     }
 
@@ -570,6 +685,12 @@ public abstract class StateMachineBase extends UIBuilder {
         super.setFormState(f, state);
         if("Home Page".equals(f.getName())) {
             setStateHomePage(f, state);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("Search Results".equals(f.getName())) {
+            setStateSearchResults(f, state);
             aboutToShowThisContainer = null;
             return;
         }
@@ -588,7 +709,23 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void setStateSearchResults(Form f, Hashtable state) {
+    }
+
+
     protected void setStateMain(Form f, Hashtable state) {
+    }
+
+    protected boolean setListModel(List cmp) {
+        String listName = cmp.getName();
+        if("MultiList".equals(listName)) {
+            return initListModelMultiList(cmp);
+        }
+        return super.setListModel(cmp);
+    }
+
+    protected boolean initListModelMultiList(List cmp) {
+        return false;
     }
 
     protected void handleComponentAction(Component c, ActionEvent event) {
@@ -603,6 +740,12 @@ public abstract class StateMachineBase extends UIBuilder {
         if(rootContainerName.equals("Home Page")) {
             if("Button".equals(c.getName())) {
                 onHomePage_ButtonAction(c, event);
+                return;
+            }
+        }
+        if(rootContainerName.equals("Search Results")) {
+            if("MultiList".equals(c.getName())) {
+                onSearchResults_MultiListAction(c, event);
                 return;
             }
         }
@@ -643,6 +786,9 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
       protected void onHomePage_ButtonAction(Component c, ActionEvent event) {
+      }
+
+      protected void onSearchResults_MultiListAction(Component c, ActionEvent event) {
       }
 
       protected void onMain_MondayAction(Component c, ActionEvent event) {
