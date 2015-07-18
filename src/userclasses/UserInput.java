@@ -78,3 +78,5 @@ public class UserInput {
         return userIsSelectedSunday;
     }
 }
+
+//fuck this shittttttttttttttttttttttttttttttttttttttttttttttttttttttttt -AKASH
