@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<component type="Form" name="Home Page" cloudDestinationProperty="Home Page" layout="BorderLayout" borderLayoutAbsoluteCenter="false" title="Welcome to Volunteer-Connect" >
+<component type="Form" name="Home Page" cloudDestinationProperty="Home Page" layout="GridLayout" gridLayoutRows="1" gridLayoutColumns="1" title="Welcome to Volunteer-Connect" >
   <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BorderLayout" borderLayoutAbsoluteCenter="false" >
-    <layoutConstraint value="Center" />
     <component type="SpanLabel" name="SpanLabel" cloudDestinationProperty="SpanLabel" tensileDragEnabled="false" >
       <layoutConstraint value="Center" />
       <custom name="text" type="java.lang.String" value="Volunteer-Connect is an app which contains a list of agencies which are seeking volunteers to help them. By entering a few pieces of information, we will find the agencies which are closest to you as well as most convenient." />
