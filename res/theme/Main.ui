@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<<<<<<< Updated upstream
 <component type="Form" name="Main" cloudDestinationProperty="Main" rtl="false" scrollVisible="true" flatten="false" scrollableX="false" scrollableY="true" layout="GridLayout" gridLayoutRows="1" gridLayoutColumns="1" title="Input Fields" >
-=======
-<component type="Form" name="Main" cloudDestinationProperty="Main" rtl="false" scrollVisible="true" flatten="false" scrollableX="false" scrollableY="true" layout="FlowLayout" flowLayoutFillRows="false" flowLayoutAlign="1" flowLayoutValign="0" title="Input Fields" >
->>>>>>> Stashed changes
   <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BorderLayout" borderLayoutAbsoluteCenter="true" >
     <component type="Container" name="Container4" cloudDestinationProperty="Container4" focusable="false" layout="FlowLayout" flowLayoutFillRows="false" flowLayoutAlign="1" flowLayoutValign="0" >
       <layoutConstraint value="North" />
@@ -12,6 +8,7 @@
         <component type="Label" name="City Label" cloudDestinationProperty="Label" text="City" >
         </component>
         <component type="GenericSpinner" name="CitySpinner" cloudDestinationProperty="CitySpinner" snapToGrid="false" flatten="false" >
+          <layoutConstraint row="-1" column="1" height="-1" width="-1" align="-1" spanHorizontal="1" valign="-1" spanVertical="1" />
           <custom name="items" type="java.lang.String" array="true" dimensions="1" >
             <str>Union City</str>
             <str>Fremont</str>
@@ -26,6 +23,7 @@
             <str>Redwood City</str>
             <str>San Francisco </str>
           </custom>
+          <custom name="columns" type="java.lang.Integer" value="1" />
         </component>
         <component type="Label" name="Area Of Interest Label" cloudDestinationProperty="Label1" text="Area of Interest " >
         </component>

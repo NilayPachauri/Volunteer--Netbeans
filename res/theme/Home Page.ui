@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<<<<<<< Updated upstream
 <component type="Form" name="Home Page" cloudDestinationProperty="Home Page" layout="GridLayout" gridLayoutRows="1" gridLayoutColumns="1" title="Welcome to Volunteer-Connect" >
   <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BorderLayout" borderLayoutAbsoluteCenter="false" >
     <component type="SpanLabel" name="SpanLabel" cloudDestinationProperty="SpanLabel" tensileDragEnabled="false" >
@@ -10,12 +9,5 @@
     <component type="Button" name="Button" cloudDestinationProperty="Button" commandName="Start Searching" commandId="1" commandAction="Main" commandBack="false" text="Start Searching" >
       <layoutConstraint value="South" />
     </component>
-=======
-<component type="Form" name="Home Page" cloudDestinationProperty="Home Page" scrollableY="true" layout="FlowLayout" flowLayoutFillRows="false" flowLayoutAlign="1" flowLayoutValign="0" title="Welcome to Volunteer-Connect" >
-  <component type="SpanLabel" name="SpanLabel" cloudDestinationProperty="SpanLabel" >
-    <custom name="text" type="java.lang.String" value="Volunteer Connect is awesome app" />
-  </component>
-  <component type="SpanButton" name="Start Searching" cloudDestinationProperty="Start Searching" >
->>>>>>> Stashed changes
   </component>
 </component>
