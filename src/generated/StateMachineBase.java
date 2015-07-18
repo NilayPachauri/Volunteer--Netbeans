@@ -36,7 +36,6 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("NumericSpinner", com.codename1.ui.spinner.NumericSpinner.class);
         UIBuilder.registerCustomComponent("Container", com.codename1.ui.Container.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
-        UIBuilder.registerCustomComponent("Button", com.codename1.ui.Button.class);
         UIBuilder.registerCustomComponent("CheckBox", com.codename1.ui.CheckBox.class);
         UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
         UIBuilder.registerCustomComponent("SpanButton", com.codename1.components.SpanButton.class);
@@ -79,7 +78,6 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("NumericSpinner", com.codename1.ui.spinner.NumericSpinner.class);
         UIBuilder.registerCustomComponent("Container", com.codename1.ui.Container.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
-        UIBuilder.registerCustomComponent("Button", com.codename1.ui.Button.class);
         UIBuilder.registerCustomComponent("CheckBox", com.codename1.ui.CheckBox.class);
         UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
         UIBuilder.registerCustomComponent("SpanButton", com.codename1.components.SpanButton.class);
@@ -290,18 +288,6 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.Button findButton(Component root) {
-        return (com.codename1.ui.Button)findByName("Button", root);
-    }
-
-    public com.codename1.ui.Button findButton() {
-        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("Button", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Button)findByName("Button", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
     public com.codename1.ui.CheckBox findFriday(Component root) {
         return (com.codename1.ui.CheckBox)findByName("Friday", root);
     }
@@ -374,25 +360,16 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public static final int COMMAND_HomePageStartSearching = 1;
-
-    protected boolean onHomePageStartSearching() {
-        return false;
+    public com.codename1.components.SpanButton findStartSearching(Component root) {
+        return (com.codename1.components.SpanButton)findByName("Start Searching", root);
     }
 
-    protected void processCommand(ActionEvent ev, Command cmd) {
-        switch(cmd.getId()) {
-            case COMMAND_HomePageStartSearching:
-                if(onHomePageStartSearching()) {
-                    ev.consume();
-                    return;
-                }
-                break;
-
+    public com.codename1.components.SpanButton findStartSearching() {
+        com.codename1.components.SpanButton cmp = (com.codename1.components.SpanButton)findByName("Start Searching", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.components.SpanButton)findByName("Start Searching", aboutToShowThisContainer);
         }
-        if(ev.getComponent() != null) {
-            handleComponentAction(ev.getComponent(), ev);
-        }
+        return cmp;
     }
 
     protected void exitForm(Form f) {
@@ -601,8 +578,8 @@ public abstract class StateMachineBase extends UIBuilder {
         }
         if(rootContainerName == null) return;
         if(rootContainerName.equals("Home Page")) {
-            if("Button".equals(c.getName())) {
-                onHomePage_ButtonAction(c, event);
+            if("Start Searching".equals(c.getName())) {
+                onHomePage_StartSearchingAction(c, event);
                 return;
             }
         }
@@ -642,7 +619,7 @@ public abstract class StateMachineBase extends UIBuilder {
         }
     }
 
-      protected void onHomePage_ButtonAction(Component c, ActionEvent event) {
+      protected void onHomePage_StartSearchingAction(Component c, ActionEvent event) {
       }
 
       protected void onMain_MondayAction(Component c, ActionEvent event) {
